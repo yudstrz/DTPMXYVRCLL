@@ -12,7 +12,6 @@ export default function Home() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     name: "",
-    name: "",
     cvText: ""
   });
 
