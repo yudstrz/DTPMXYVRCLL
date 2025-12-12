@@ -3,7 +3,8 @@ import os
 import pandas as pd
 import numpy as np
 import json
-import google.generativeai as genai
+import requests
+import time
 from dotenv import load_dotenv
 
 DATA_DIR = os.path.join(os.getcwd(), 'data')
@@ -14,116 +15,126 @@ PON_JSON_FILE = os.path.join(DATA_DIR, 'pon_data.json')
 VECTORS_JSON_FILE = os.path.join(DATA_DIR, 'pon_vectors.json')
 ENV_FILE = os.path.join(os.getcwd(), '.env.local')
 
+def get_embedding(text, api_key):
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:embedContent?key={api_key}"
+    headers = {'Content-Type': 'application/json'}
+    data = {
+        "model": "models/text-embedding-004",
+        "content": {
+             "parts": [{"text": text}]
+        },
+        "taskType": "RETRIEVAL_DOCUMENT"
+    }
+    
+    try:
+        resp = requests.post(url, headers=headers, json=data)
+        if resp.status_code != 200:
+            print(f"API Error {resp.status_code}: {resp.text}")
+            return [0.0] * 768
+            
+        result = resp.json()
+        if 'embedding' not in result:
+             return [0.0] * 768
+             
+        return result['embedding']['values']
+    except Exception as e:
+        print(f"Request failed: {e}")
+        return [0.0] * 768
+
 def convert_data():
     if os.path.exists(ENV_FILE):
         print(f"Loading env from {ENV_FILE}")
-        # Try different encodings
+        load_dotenv(ENV_FILE)
+    
+    api_key = os.environ.get("GEMINI_API_KEY")
+    if not api_key:
+        print("GEMINI_API_KEY not in env, trying manual parse...")
         try:
-            load_dotenv(ENV_FILE, encoding='utf-8')
-        except UnicodeDecodeError:
-            print("UTF-8 failed, trying UTF-16...")
-            try:
-                load_dotenv(ENV_FILE, encoding='utf-16')
-            except UnicodeDecodeError:
-                 print("UTF-16 failed, trying latin-1...")
-                 load_dotenv(ENV_FILE, encoding='latin-1')
-    else:
-        print("No .env.local found, relying on system env vars")
+            with open(ENV_FILE, 'r', encoding='utf-8') as f:
+                for line in f:
+                    if line.startswith('GEMINI_API_KEY='):
+                        api_key = line.strip().split('=', 1)[1]
+                        break
+        except Exception as e:
+            print(f"Manual parse failed: {e}")
 
-    print("Starting conversion...")
+    if not api_key:
+        print("ERROR: GEMINI_API_KEY not found.")
+        return
+    
+    print(f"Using API Key: {api_key[:5]}...")
+
+    print("Starting conversion and embedding generation...")
     
     df = None
-    
-    # Convert DataFrame to JSON
     if os.path.exists(PON_DATA_FILE):
-        print(f"Loading {PON_DATA_FILE}...")
-        try:
-            with open(PON_DATA_FILE, 'rb') as f:
-                df = pickle.load(f)
+        with open(PON_DATA_FILE, 'rb') as f:
+            df = pickle.load(f)
             
-            # Ensure it is a DataFrame
-            if isinstance(df, pd.DataFrame):
-                df = df.fillna("")
-                data_list = df.to_dict(orient='records')
-                
-                with open(PON_JSON_FILE, 'w', encoding='utf-8') as f:
-                    json.dump(data_list, f, ensure_ascii=False, indent=2)
-                print(f"Saved {len(data_list)} records to {PON_JSON_FILE}")
-            else:
-                print("Error: Pon data is not a pandas DataFrame")
-
-        except Exception as e:
-            print(f"Error loading/converting pon_data: {e}")
-            return # Cannot proceed without data
-    else:
-        print(f"File not found: {PON_DATA_FILE}")
-        return
-
-    # Handle Vectors
-    vecs_list = []
-    if os.path.exists(VECTORS_FILE):
-        print(f"Loading {VECTORS_FILE}...")
-        try:
-            with open(VECTORS_FILE, 'rb') as f:
-                vecs = pickle.load(f)
-            if isinstance(vecs, np.ndarray):
-                vecs_list = vecs.tolist()
-            elif isinstance(vecs, list):
-                vecs_list = vecs
-        except Exception as e:
-            print(f"Error loading vectors: {e}")
-    
-    if not vecs_list:
-        print("Vectors missing or empty. Generating new embeddings...")
-        api_key = os.environ.get("GEMINI_API_KEY")
-        if not api_key:
-            print("Error: GEMINI_API_KEY not found in environment!")
-            for k in os.environ:
-                if 'GEMINI' in k:
-                    print(f"Found similar key: {k}")
-            return
-
-        genai.configure(api_key=api_key)
-        
-        if df is not None:
-            # Logic from api/index.py
+        if isinstance(df, pd.DataFrame):
+            df = df.fillna("")
+            data_list = df.to_dict(orient='records')
+            
+            with open(PON_JSON_FILE, 'w', encoding='utf-8') as f:
+                json.dump(data_list, f, ensure_ascii=False, indent=2)
+            print(f"Saved {len(data_list)} records to {PON_JSON_FILE}")
+            
+            # Generate Embeddings
             texts = (
                  "Okupasi: " + df['Okupasi'].astype(str) + ". " +
                  "Unit Kompetensi: " + df['Unit_Kompetensi'].astype(str) + ". " +
                  "Keterampilan: " + df['Kuk_Keywords'].astype(str)
             ).tolist()
             
-            print(f"Generating embeddings for {len(texts)} items...")
+            print(f"Generating new embeddings for {len(texts)} items (using text-embedding-004)...")
             vectors = []
+            
             for i, text in enumerate(texts):
-                if i % 10 == 0:
-                    print(f"Processed {i}/{len(texts)}")
-                try:
-                    emb = genai.embed_content(
-                        model="models/embedding-001",
-                        content=text,
-                        task_type="retrieval_document"
-                    )
-                    vectors.append(emb['embedding'])
-                except Exception as e:
-                    print(f"Error embedding item {i}: {e}")
-                    # Fallback? or break?
-                    vectors.append([0.0]*768) # Placeholder to avoid shape mismatch
+                if i % 5 == 0:
+                    print(f"Processing {i}/{len(texts)}...")
+                
+                vec = get_embedding(text, api_key)
+                vectors.append(vec)
+                time.sleep(0.5) # Avoid rate limits
+                
+            # Save vectors
+            with open(VECTORS_JSON_FILE, 'w', encoding='utf-8') as f:
+                json.dump(vectors, f)
+            print(f"Saved {len(vectors)} vectors to {VECTORS_JSON_FILE}")
             
-            vecs_list = vectors
-            print("Generation complete.")
-            
-            # Save vectors to json immediately
-            if vecs_list:
-                with open(VECTORS_JSON_FILE, 'w', encoding='utf-8') as f:
-                    json.dump(vecs_list, f)
-                print(f"Saved vectors to {VECTORS_JSON_FILE}. Count: {len(vecs_list)}")
+    else:
+        print(f"File not found: {PON_DATA_FILE}")
 
-    elif vecs_list:
-         # Vectors existed in pickle, just save to json
-        with open(VECTORS_JSON_FILE, 'w', encoding='utf-8') as f:
-            json.dump(vecs_list, f)
-        print(f"Saved vectors to {VECTORS_JSON_FILE}. Count: {len(vecs_list)}")
+    # Extract Courses
+    xlsx_path = os.path.join(DATA_DIR, 'DTP_Database.xlsx')
+    courses_json_path = os.path.join(DATA_DIR, 'courses.json')
+    
+    if os.path.exists(xlsx_path):
+        print(f"Extracting courses from {xlsx_path}...")
+        try:
+            df_courses = pd.read_excel(xlsx_path, sheet_name='Course_Maxy')
+            df_courses = df_courses.fillna("")
+            
+            # Standardize columns for frontend
+            courses_list = []
+            for _, row in df_courses.iterrows():
+                courses_list.append({
+                    "title": row.get('Nama_Course', 'Unknown Course'),
+                    "provider": "Maxy Academy",
+                    "level": row.get('Level', 'All Levels'),
+                    "duration": row.get('Duration', 'Self-paced'),
+                    "image": row.get('Image_URL', 'https://placehold.co/600x400/orange/white?text=Maxy+Course'),
+                    "url": row.get('URL', '#')
+                })
+                
+            with open(courses_json_path, 'w', encoding='utf-8') as f:
+                json.dump(courses_list, f, indent=2)
+            print(f"Saved {len(courses_list)} courses to {courses_json_path}")
+            
+        except Exception as e:
+            print(f"Error extracting courses: {e}")
+    else:
+        print(f"Excel file not found: {xlsx_path}")
 
 if __name__ == "__main__":
     convert_data()

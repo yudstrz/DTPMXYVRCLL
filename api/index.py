@@ -11,19 +11,30 @@ from dotenv import load_dotenv
 app = FastAPI()
 
 # Config
-try:
-    load_dotenv(".env.local", encoding="utf-8")
-except UnicodeDecodeError:
-    try:
-        load_dotenv(".env.local", encoding="utf-16")
-    except:
-        pass # Fallback to system env or ignore
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(BASE_DIR)
+ENV_FILE = os.path.join(PROJECT_ROOT, '.env.local')
+
+print(f"Loading env from {ENV_FILE}")
+load_dotenv(ENV_FILE)
 
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 
-# Robust path handling
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(BASE_DIR)
+# Fallback: Manual Parse if load_dotenv fails
+if not GEMINI_API_KEY and os.path.exists(ENV_FILE):
+    print("GEMINI_API_KEY not found via load_dotenv, trying manual parse...")
+    try:
+        with open(ENV_FILE, 'r', encoding='utf-8') as f:
+            for line in f:
+                if line.startswith('GEMINI_API_KEY='):
+                    GEMINI_API_KEY = line.strip().split('=', 1)[1]
+                    break
+    except Exception as e:
+         print(f"Manual env parse failed: {e}")
+
+if not GEMINI_API_KEY:
+    print("CRITICAL WARNING: GEMINI_API_KEY is still None!")
+
 DATA_DIR = os.path.join(PROJECT_ROOT, 'data')
 
 PON_JSON_FILE = os.path.join(DATA_DIR, 'pon_data.json')
@@ -200,3 +211,11 @@ async def parse_cv(file: UploadFile = File(...)):
         return {"error": str(e)}
         
     return {"text": text.strip()}
+
+@app.get("/api/courses")
+def get_courses():
+    courses_path = os.path.join(DATA_DIR, 'courses.json')
+    if os.path.exists(courses_path):
+        with open(courses_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return []

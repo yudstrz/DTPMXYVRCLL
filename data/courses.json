@@ -1,0 +1,370 @@
+[
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/bootcamp/backend"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/bootcamp/frontend"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/bootcamp/ui-ux"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/bootcamp/digital-content-creator-mbc"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/bootcamp/digital-marketing"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/bootcamp/belajar-php-untuk-pemula"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/bootcamp/prompt-ai"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/bootcamp/belajar-statistik-data-untuk-pemula"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/bootcamp/belajar-flask-python-react-js-untuk-pemula"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/bootcamp/enterpreneur-capstone"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/bootcamp/introduction-dasar-dasar-desain-antarmuka-untuk-website"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/bootcamp/one-day-bootcamp-x-jitc-Surabaya"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/bootcamp/artificial-intelligence-ai-intermediate-ppsdm-perhubungan-darat-maxy-academy"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/bootcamp/artificial-intelligence-kemendikdasmen-koding-dan-kecerdasan-artifisial-2025"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/bootcamp/bbpvp-digital-office-administration-berbasis-google-workspace"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/bootcamp/bbpvp-pengoperasian-tools-generative-ai-artificial-intelligence"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/bootcamp/ai-for-marketing-excellence-x-adira"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/hacking-is-not-cracking"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/mini-bootcamp-digital-marketing"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/digital-marketing-power-sesion"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/8%20day%20web%20feveloper"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/8%20Day%20Bootcamp%20Data%20Science"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/8%20Day%20Bootcamp%20UI/UX"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/digital-marketing-fast-track"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/ai-powered-uiux-design-bootcamp"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/belajar-figma-untuk-pemula"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/belajar-html-css-untuk-pemula"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/digital-marketing-ai"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/digitalent-enterpreneur-kominfo"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/belajar-data-science-untuk-pemula"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/belajar-javascript-react-untuk-pemula"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/5-days-mini-bootcamp-x-sari-mutiara"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/introduction-framework-laravel-untuk-pembuatan-website"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/figma-untuk-desain-uiux-website"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/build-backend-fast-with-python"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/creative-web-design-mastery"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/social-impact-starter"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/digital-marketing-mastery"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/sociopreneurship-x-uad"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/figma-and-html-css"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/content-creator-mastery"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/artificial-intelligence-ai"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/ai-for-digital-product"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/ai-for-productivity-x-adira"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/unlocking-pathways-careers-and-higher-education-abroad"
+  },
+  {
+    "title": "Unknown Course",
+    "provider": "Maxy Academy",
+    "level": "All Levels",
+    "duration": "Self-paced",
+    "image": "https://placehold.co/600x400/orange/white?text=Maxy+Course",
+    "url": "https://maxy.academy/browse-courses/course/mini-bootcamp/bpsdmi-kementerian-perindustrian"
+  }
+]
