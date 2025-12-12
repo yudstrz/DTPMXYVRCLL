@@ -30,31 +30,51 @@ def load_data():
             pon_data = json.load(f)
     return pon_data
 
-def preprocess_text(text: str) -> set:
-    """Convert text to a set of unique lowercase alphanumeric words."""
+def preprocess_text(text: str) -> list:
+    """Convert text to a list of lowercase alphanumeric words."""
     # Simple tokenization: remove non-alphanumeric, lowercase, split
     tokens = re.findall(r'\w+', text.lower())
-    # Fiter out common stop words if needed, for now just use set
-    return set(tokens)
+    # Filter out very short tokens (1-2 chars) and common stop words
+    stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'from', 'as', 'is', 'was', 'are', 'be', 'been', 'being'}
+    tokens = [t for t in tokens if len(t) > 2 and t not in stop_words]
+    return tokens
 
-def calculate_match_score(user_tokens: set, occupation: dict) -> float:
-    """Calculate a simplistic overlap score between user tokens and occupation keywords."""
-    # Combine relevant fields from occupation
-    occ_text = f"{occupation.get('Okupasi', '')} {occupation.get('Unit_Kompetensi', '')} {occupation.get('Kuk_Keywords', '')}"
-    occ_tokens = preprocess_text(occ_text)
+def calculate_match_score(user_tokens: list, occupation: dict) -> float:
+    """Calculate weighted match score between user tokens and occupation keywords."""
+    # Extract fields with different weights
+    occ_name = occupation.get('Okupasi', '')
+    unit_kompetensi = occupation.get('Unit_Kompetensi', '')
+    kuk_keywords = occupation.get('Kuk_Keywords', '')
     
-    if not occ_tokens:
-        return 0.0
-        
-    # Intersection count
-    intersection = user_tokens.intersection(occ_tokens)
+    # Tokenize each field separately
+    name_tokens = set(preprocess_text(occ_name))
+    unit_tokens = set(preprocess_text(unit_kompetensi))
+    kuk_tokens = set(preprocess_text(kuk_keywords))
     
-    # Jaccard Similarity (Intersection / Union)
-    union = user_tokens.union(occ_tokens)
-    if not union:
+    user_token_set = set(user_tokens)
+    
+    # Calculate matches with weights
+    name_matches = len(user_token_set.intersection(name_tokens))
+    unit_matches = len(user_token_set.intersection(unit_tokens))
+    kuk_matches = len(user_token_set.intersection(kuk_tokens))
+    
+    # Weighted scoring (name is most important, then keywords, then unit)
+    weighted_score = (name_matches * 3.0) + (kuk_matches * 2.0) + (unit_matches * 1.5)
+    
+    # Normalize by total possible matches (with weights)
+    max_possible = (len(name_tokens) * 3.0) + (len(kuk_tokens) * 2.0) + (len(unit_tokens) * 1.5)
+    
+    if max_possible == 0:
         return 0.0
-        
-    return len(intersection) / len(union)
+    
+    # Calculate percentage and boost it for better UX (multiply by 100 for percentage)
+    raw_score = (weighted_score / max_possible) * 100
+    
+    # Apply a boost factor to make scores more meaningful (square root to compress high scores)
+    # This makes low scores higher and keeps high scores reasonable
+    boosted_score = min(100, raw_score * 1.5)
+    
+    return boosted_score / 100  # Return as 0-1 for consistency
 
 @app.post("/api/match-profile")
 async def match_profile(req: ProfileRequest):

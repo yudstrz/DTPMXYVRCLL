@@ -22,27 +22,18 @@ interface Course {
 }
 
 const RSS_JOBS = [
-    {
-        title: "Junior Python Developer",
-        company: "Tech Corp Indonesia",
-        location: "Remote",
-        posted: "2 hari yang lalu",
-        source: "LinkedIn RSS"
-    },
-    {
-        title: "AI Engineer Intern",
-        company: "Startup AI",
-        location: "Jakarta",
-        posted: "5 jam yang lalu",
-        source: "JobStreet RSS"
-    },
-    {
-        title: "Data Analyst",
-        company: "E-Commerce Unicorn",
-        location: "Bandung",
-        posted: "1 hari yang lalu",
-        source: "TechInAsia RSS"
-    }
+    { title: "Junior Data Analyst", company: "Tokopedia", location: "Jakarta", posted: "1 hari lalu", source: "LinkedIn", url: "https://www.linkedin.com/jobs/search/?keywords=Junior%20Data%20Analyst" },
+    { title: "AI Engineer (NLP)", company: "Gojek", location: "Remote", posted: "3 jam lalu", source: "Glints", url: "https://glints.com/id/opportunities/jobs/explore?keyword=AI%20Engineer" },
+    { title: "Frontend Developer React", company: "Bukalapak", location: "Jakarta", posted: "2 hari lalu", source: "JobStreet", url: "https://www.jobstreet.co.id/id/job-search/frontend-developer-jobs/" },
+    { title: "Backend Developer Python", company: "Traveloka", location: "Bandung", posted: "5 jam lalu", source: "Kalibrr", url: "https://www.kalibrr.com/job-board/te/matches?text=Backend%20Developer" },
+    { title: "UI/UX Designer", company: "Shopee", location: "Remote", posted: "1 hari lalu", source: "LinkedIn", url: "https://www.linkedin.com/jobs/search/?keywords=UI%20UX%20Designer" },
+    { title: "DevOps Engineer", company: "Blibli", location: "Jakarta", posted: "4 jam lalu", source: "Glints", url: "https://glints.com/id/opportunities/jobs/explore?keyword=DevOps" },
+    { title: "Mobile Developer Flutter", company: "OVO", location: "Jakarta", posted: "6 jam lalu", source: "JobStreet", url: "https://www.jobstreet.co.id/id/job-search/flutter-developer-jobs/" },
+    { title: "Data Scientist", company: "Grab", location: "Remote", posted: "2 hari lalu", source: "LinkedIn", url: "https://www.linkedin.com/jobs/search/?keywords=Data%20Scientist" },
+    { title: "Product Manager", company: "Ruangguru", location: "Jakarta", posted: "1 hari lalu", source: "Kalibrr", url: "https://www.kalibrr.com/job-board/te/matches?text=Product%20Manager" },
+    { title: "QA Engineer", company: "Tiket.com", location: "Bandung", posted: "3 hari lalu", source: "Glints", url: "https://glints.com/id/opportunities/jobs/explore?keyword=QA%20Engineer" },
+    { title: "Cybersecurity Analyst", company: "Bank Mandiri", location: "Jakarta", posted: "2 hari lalu", source: "JobStreet", url: "https://www.jobstreet.co.id/id/job-search/cybersecurity-jobs/" },
+    { title: "Digital Marketing Specialist", company: "Zalora", location: "Remote", posted: "4 jam lalu", source: "LinkedIn", url: "https://www.linkedin.com/jobs/search/?keywords=Digital%20Marketing" }
 ];
 
 export default function ResultsPage() {
@@ -90,7 +81,23 @@ export default function ResultsPage() {
                 const coursesRes = await fetch("/api/courses");
                 const coursesJson = await coursesRes.json();
                 if (Array.isArray(coursesJson)) {
-                    setCourses(coursesJson.slice(0, 6)); // Take top 6
+                    // Filter courses based on selected occupation if available
+                    let filteredCourses = coursesJson;
+                    if (json.recommendations && json.recommendations.length > 0) {
+                        const firstOccupation = json.recommendations[0].nama.toLowerCase();
+                        // Try to match courses with occupation keywords
+                        const relevantCourses = coursesJson.filter(course => {
+                            const courseTitle = course.title.toLowerCase();
+                            const courseUrl = course.url.toLowerCase();
+                            // Check if course relates to the occupation
+                            return firstOccupation.split(' ').some(keyword =>
+                                keyword.length > 3 && (courseTitle.includes(keyword) || courseUrl.includes(keyword))
+                            );
+                        });
+                        // Use filtered courses if we found matches, otherwise show all
+                        filteredCourses = relevantCourses.length > 0 ? relevantCourses : coursesJson;
+                    }
+                    setCourses(filteredCourses.slice(0, 6)); // Take top 6
                 }
 
             } catch (err) {
@@ -109,18 +116,30 @@ export default function ResultsPage() {
         setSelectedOccupationName(occ.nama);
     };
 
-    // Boolean Search Logic
+    // Boolean Search Logic - Extract keywords from occupation name
     const generateBooleanSearch = (site: string) => {
-        const baseQuery = `"${selectedOccupationName}" AND ("Junior" OR "Associate" OR "Entry Level")`;
+        // Extract key terms from occupation name (remove common words)
+        const keywords = selectedOccupationName
+            .replace(/\(.*?\)/g, '') // Remove parentheses content
+            .split(/[\s\/]+/) // Split by space or slash
+            .filter(word => word.length > 2 && !['and', 'the', 'for', 'with'].includes(word.toLowerCase()))
+            .slice(0, 3); // Take top 3 keywords
+
+        const mainKeyword = keywords[0] || selectedOccupationName;
+        const secondaryKeywords = keywords.slice(1).join(' OR ');
+
         switch (site) {
             case 'linkedin':
-                return `https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(baseQuery)}`;
+                const linkedinQuery = secondaryKeywords
+                    ? `"${mainKeyword}" AND (${secondaryKeywords}) AND ("Junior" OR "Entry Level")`
+                    : `"${mainKeyword}" AND ("Junior" OR "Entry Level")`;
+                return `https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(linkedinQuery)}`;
             case 'glints':
-                return `https://glints.com/id/opportunities/jobs/explore?keyword=${encodeURIComponent(selectedOccupationName)}`;
+                return `https://glints.com/id/opportunities/jobs/explore?keyword=${encodeURIComponent(mainKeyword)}`;
             case 'jobstreet':
-                return `https://www.jobstreet.co.id/id/job-search/${encodeURIComponent(selectedOccupationName.replace(/\s+/g, '-'))}-jobs/`;
+                return `https://www.jobstreet.co.id/id/job-search/${encodeURIComponent(mainKeyword.replace(/\s+/g, '-'))}-jobs/`;
             case 'kalibrr':
-                return `https://www.kalibrr.com/job-board/te/matches?text=${encodeURIComponent(selectedOccupationName)}`;
+                return `https://www.kalibrr.com/job-board/te/matches?text=${encodeURIComponent(mainKeyword)}`;
             default:
                 return '#';
         }
@@ -305,7 +324,13 @@ export default function ResultsPage() {
                             <div className="bg-[#1c1f2b] border border-gray-800 rounded-3xl p-6 md:p-8">
                                 <div className="grid gap-4">
                                     {RSS_JOBS.map((job, idx) => (
-                                        <div key={idx} className="flex flex-col md:flex-row md:items-center justify-between p-4 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-gray-700 cursor-pointer group">
+                                        <a
+                                            key={idx}
+                                            href={job.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex flex-col md:flex-row md:items-center justify-between p-4 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-gray-700 cursor-pointer group"
+                                        >
                                             <div>
                                                 <h3 className="text-lg font-bold group-hover:text-green-400 transition-colors">{job.title}</h3>
                                                 <div className="flex items-center text-sm text-gray-400 space-x-3 mt-1">
@@ -320,7 +345,7 @@ export default function ResultsPage() {
                                                 <span className="text-xs bg-gray-800 text-gray-400 px-3 py-1 rounded-full border border-gray-700">{job.source}</span>
                                                 <ArrowRight className="w-4 h-4 ml-4 text-gray-500 group-hover:text-white transform group-hover:translate-x-1 transition-all" />
                                             </div>
-                                        </div>
+                                        </a>
                                     ))}
                                 </div>
                             </div>
