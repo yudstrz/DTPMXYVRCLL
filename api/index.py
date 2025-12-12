@@ -3,16 +3,23 @@ from pydantic import BaseModel
 import os
 import json
 import math
-import google.generativeai as genai
+import requests
 from typing import List, Optional
 import io
+from dotenv import load_dotenv
 
 app = FastAPI()
 
 # Config
+try:
+    load_dotenv(".env.local", encoding="utf-8")
+except UnicodeDecodeError:
+    try:
+        load_dotenv(".env.local", encoding="utf-16")
+    except:
+        pass # Fallback to system env or ignore
+
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-if GEMINI_API_KEY:
-    genai.configure(api_key=GEMINI_API_KEY)
 
 DATA_DIR = os.path.join(os.getcwd(), 'data')
 PON_JSON_FILE = os.path.join(DATA_DIR, 'pon_data.json')
@@ -55,6 +62,66 @@ def cosine_similarity(vec_a, vec_b):
         
     return dot_product / (norm_a * norm_b)
 
+def get_gemini_embedding(text: str):
+    if not GEMINI_API_KEY:
+        raise Exception("GEMINI_API_KEY not set")
+    
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:embedContent?key={GEMINI_API_KEY}"
+    headers = {'Content-Type': 'application/json'}
+    data = {
+        "model": "models/text-embedding-004",
+        "content": {
+             "parts": [{"text": text}]
+        },
+        "taskType": "RETRIEVAL_QUERY"
+    }
+    
+    resp = requests.post(url, headers=headers, json=data)
+    if resp.status_code != 200:
+        raise Exception(f"Gemini API Error: {resp.text}")
+        
+    result = resp.json()
+    if 'embedding' not in result:
+        raise Exception(f"Invalid response from Gemini: {result}")
+        
+    return result['embedding']['values']
+
+def get_gemini_chat_response(message: str, history: List[dict]):
+    if not GEMINI_API_KEY:
+        raise Exception("GEMINI_API_KEY not set")
+        
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
+    headers = {'Content-Type': 'application/json'}
+    
+    contents = []
+    for msg in history:
+        role = "user" if msg['role'] == 'user' else "model"
+        contents.append({
+            "role": role,
+            "parts": [{"text": msg['content']}]
+        })
+        
+    # Add current message
+    contents.append({
+        "role": "user",
+        "parts": [{"text": message}]
+    })
+    
+    data = {
+        "contents": contents
+    }
+    
+    resp = requests.post(url, headers=headers, json=data)
+    if resp.status_code != 200:
+        raise Exception(f"Gemini API Error: {resp.text}")
+        
+    result = resp.json()
+    try:
+        text_response = result['candidates'][0]['content']['parts'][0]['text']
+        return text_response
+    except (KeyError, IndexError):
+        raise Exception(f"Unexpected response format: {result}")
+
 @app.post("/api/match-profile")
 async def match_profile(req: ProfileRequest):
     pon_data, vectors = load_data()
@@ -63,20 +130,13 @@ async def match_profile(req: ProfileRequest):
         return {"error": "Database not found. Please run scripts/convert_data.py locally."}
     
     if len(pon_data) != len(vectors):
-         # If size mismatch (maybe fallback or just trim?)
-         # For now, just warn or trim to shortest
          min_len = min(len(pon_data), len(vectors))
          pon_data = pon_data[:min_len]
          vectors = vectors[:min_len]
 
     # Embed User Query
     try:
-        query_emb_resp = genai.embed_content(
-            model="models/embedding-001",
-            content=req.text,
-            task_type="retrieval_query"
-        )
-        query_vec = query_emb_resp['embedding']
+        query_vec = get_gemini_embedding(req.text)
     except Exception as e:
         return {"error": f"Embedding error: {str(e)}"}
     
@@ -104,25 +164,13 @@ async def match_profile(req: ProfileRequest):
 
 @app.post("/api/chat")
 async def chat_career(req: ChatRequest):
-    model = genai.GenerativeModel('gemini-1.5-flash')
-    
-    # Construct history
-    history_gemini = []
-    for msg in req.history:
-        history_gemini.append({
-            "role": "user" if msg['role'] == 'user' else "model",
-            "parts": [msg['content']]
-        })
-    
-    chat = model.start_chat(history=history_gemini)
     try:
-        response = chat.send_message(req.message)
-        return {"response": response.text}
+        response_text = get_gemini_chat_response(req.message, req.history)
+        return {"response": response_text}
     except Exception as e:
         return {"error": str(e)}
 
-# Parsing Support (Removing dependencies if possible, but pypdf/python-docx are smaller than pandas)
-# Keeping them for now unless further optimization needed.
+# Parsing Support
 from pypdf import PdfReader
 import docx
 
@@ -140,7 +188,6 @@ async def parse_cv(file: UploadFile = File(...)):
             for page in reader.pages:
                 text += page.extract_text() + "\n"
         elif filename.endswith('.docx'):
-            # python-docx
             doc = docx.Document(file_io)
             text = "\n".join([p.text for p in doc.paragraphs])
         elif filename.endswith('.txt'):
