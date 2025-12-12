@@ -1,24 +1,22 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from pydantic import BaseModel
 import os
-import pickle
+import json
+import math
 import google.generativeai as genai
-import numpy as np
-import pandas as pd
 from typing import List, Optional
 import io
-# import PyPDF2 # If needed, but lets try to keep it light or use it if installed
-# import docx
 
 app = FastAPI()
 
 # Config
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-genai.configure(api_key=GEMINI_API_KEY)
+if GEMINI_API_KEY:
+    genai.configure(api_key=GEMINI_API_KEY)
 
 DATA_DIR = os.path.join(os.getcwd(), 'data')
-PON_DATA_FILE = os.path.join(DATA_DIR, 'pon_data.pkl')
-VECTORS_FILE = os.path.join(DATA_DIR, 'pon_gemini_vectors.pkl')
+PON_JSON_FILE = os.path.join(DATA_DIR, 'pon_data.json')
+VECTORS_JSON_FILE = os.path.join(DATA_DIR, 'pon_vectors.json')
 
 class ProfileRequest(BaseModel):
     text: str
@@ -32,83 +30,73 @@ class ChatRequest(BaseModel):
 def health():
     return {"status": "ok"}
 
-def get_vectors_and_df():
-    # Load DataFrame
-    if not os.path.exists(PON_DATA_FILE):
-        return None, None
-    
-    with open(PON_DATA_FILE, 'rb') as f:
-        df_pon = pickle.load(f)
-
-    # Check for vectors
-    if os.path.exists(VECTORS_FILE):
-        with open(VECTORS_FILE, 'rb') as f:
-            vectors = pickle.load(f)
-        return df_pon, vectors
-    
-    # Generate Vectors (One-time / Cache)
-    # Note: In a real serverless env, this might timeout if dataset is huge.
-    # Assuming valid small dataset for this demo.
-    print("Generating Gemini Embeddings...")
-    texts = (
-         "Okupasi: " + df_pon['Okupasi'].astype(str) + ". " +
-         "Unit Kompetensi: " + df_pon['Unit_Kompetensi'].astype(str) + ". " +
-         "Keterampilan: " + df_pon['Kuk_Keywords'].astype(str)
-    ).tolist()
-    
+def load_data():
+    pon_data = []
     vectors = []
-    # Batch processing to avoid limits? For now sequential.
-    for text in texts:
-        emb = genai.embed_content(
-            model="models/embedding-001",
-            content=text,
-            task_type="retrieval_document"
-        )
-        vectors.append(emb['embedding'])
     
-    vectors = np.array(vectors)
+    if os.path.exists(PON_JSON_FILE):
+        with open(PON_JSON_FILE, 'r', encoding='utf-8') as f:
+            pon_data = json.load(f)
+            
+    if os.path.exists(VECTORS_JSON_FILE):
+        with open(VECTORS_JSON_FILE, 'r', encoding='utf-8') as f:
+            vectors = json.load(f)
+            
+    return pon_data, vectors
+
+def cosine_similarity(vec_a, vec_b):
+    # Pure python cosine similarity
+    dot_product = sum(a * b for a, b in zip(vec_a, vec_b))
+    norm_a = math.sqrt(sum(a * a for a in vec_a))
+    norm_b = math.sqrt(sum(b * b for b in vec_b))
     
-    # Save cache (Attempt to save, might be ephemeral in Vercel)
-    try:
-        with open(VECTORS_FILE, 'wb') as f:
-            pickle.dump(vectors, f)
-    except:
-        pass # Read-only file system
+    if norm_a == 0 or norm_b == 0:
+        return 0.0
         
-    return df_pon, vectors
+    return dot_product / (norm_a * norm_b)
 
 @app.post("/api/match-profile")
 async def match_profile(req: ProfileRequest):
-    df_pon, vectors = get_vectors_and_df()
-    if df_pon is None or vectors is None:
-        return {"error": "Database not found"}
+    pon_data, vectors = load_data()
     
+    if not pon_data or not vectors:
+        return {"error": "Database not found. Please run scripts/convert_data.py locally."}
+    
+    if len(pon_data) != len(vectors):
+         # If size mismatch (maybe fallback or just trim?)
+         # For now, just warn or trim to shortest
+         min_len = min(len(pon_data), len(vectors))
+         pon_data = pon_data[:min_len]
+         vectors = vectors[:min_len]
+
     # Embed User Query
-    query_emb = genai.embed_content(
-        model="models/embedding-001",
-        content=req.text,
-        task_type="retrieval_query"
-    )['embedding']
+    try:
+        query_emb_resp = genai.embed_content(
+            model="models/embedding-001",
+            content=req.text,
+            task_type="retrieval_query"
+        )
+        query_vec = query_emb_resp['embedding']
+    except Exception as e:
+        return {"error": f"Embedding error: {str(e)}"}
     
-    query_vec = np.array(query_emb)
-    
-    # Cosine Similarity
-    # (A . B) / (|A| * |B|)
-    norm_vectors = np.linalg.norm(vectors, axis=1)
-    norm_query = np.linalg.norm(query_vec)
-    
-    scores = np.dot(vectors, query_vec) / (norm_vectors * norm_query)
+    # Calculate Scores
+    scores = []
+    for idx, vec in enumerate(vectors):
+        score = cosine_similarity(query_vec, vec)
+        scores.append((idx, score))
     
     # Top K
-    top_indices = np.argsort(scores)[::-1][:req.top_k]
+    scores.sort(key=lambda x: x[1], reverse=True)
+    top_indices = scores[:req.top_k]
     
     results = []
-    for idx in top_indices:
-        row = df_pon.iloc[idx]
+    for idx, score in top_indices:
+        row = pon_data[idx]
         results.append({
             "id": row.get('OkupasiID', 'N/A'),
             "nama": row.get('Okupasi', 'N/A'),
-            "score": float(scores[idx]),
+            "score": float(score),
             "gap": "Skill Gap Analysis requires detailed comparison." # Placeholder
         })
         
@@ -127,12 +115,14 @@ async def chat_career(req: ChatRequest):
         })
     
     chat = model.start_chat(history=history_gemini)
-    response = chat.send_message(req.message)
-    
-    return {"response": response.text}
+    try:
+        response = chat.send_message(req.message)
+        return {"response": response.text}
+    except Exception as e:
+        return {"error": str(e)}
 
-# Parsing Support (Simplified for now)
-# To fully implement, need to install pypdf/python-docx
+# Parsing Support (Removing dependencies if possible, but pypdf/python-docx are smaller than pandas)
+# Keeping them for now unless further optimization needed.
 from pypdf import PdfReader
 import docx
 
@@ -150,6 +140,7 @@ async def parse_cv(file: UploadFile = File(...)):
             for page in reader.pages:
                 text += page.extract_text() + "\n"
         elif filename.endswith('.docx'):
+            # python-docx
             doc = docx.Document(file_io)
             text = "\n".join([p.text for p in doc.paragraphs])
         elif filename.endswith('.txt'):

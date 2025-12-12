@@ -1,0 +1,702 @@
+[
+  {
+    "OkupasiID": "PON-AI-01",
+    "Area_Fungsi": "Artificial Intelligence",
+    "Okupasi": "AI Engineer (NLP)",
+    "Unit_Kompetensi": "Natural Language Processing (NLP), Large Language Models (LLM), Transformers Architecture, Text Analysis, Generative AI",
+    "Kuk_Keywords": "Fine-tuning Pre-trained Models (BERT/GPT), Implementing RAG (Retrieval-Augmented Generation), Performing Sentiment Analysis, Building Chatbots/Conversational Agents, Tokenization & Embeddings"
+  },
+  {
+    "OkupasiID": "PON-AI-02",
+    "Area_Fungsi": "Artificial Intelligence",
+    "Okupasi": "AI Engineer (Computer Vision)",
+    "Unit_Kompetensi": "Computer Vision Algorithms, Deep Learning (CNN), Image & Video Processing, Object Detection & Segmentation, Generative Adversarial Networks (GANs)",
+    "Kuk_Keywords": "Training Object Detection Models (YOLO/SSD), Implementing Image Segmentation, Performing OCR (Optical Character Recognition), Facial Recognition, Image Augmentation Techniques"
+  },
+  {
+    "OkupasiID": "PON-AI-03",
+    "Area_Fungsi": "Artificial Intelligence",
+    "Okupasi": "AI Researcher",
+    "Unit_Kompetensi": "Advanced Machine Learning Research, Algorithm Development, Scientific Writing, Experimental Prototyping, State-of-the-Art (SOTA) Analysis",
+    "Kuk_Keywords": "Conducting Literature Reviews, Publishing Research Papers, Designing Novel Algorithms, Benchmarking Model Performance, Prototyping Proof-of-Concepts"
+  },
+  {
+    "OkupasiID": "PON-AI-04",
+    "Area_Fungsi": "Artificial Intelligence",
+    "Okupasi": "Data Annotator",
+    "Unit_Kompetensi": "Data Labeling & Tagging, Data Quality Assurance, Annotation Tools Proficiency, Dataset Management, Guidelines Adherence",
+    "Kuk_Keywords": "Labeling Images (Bounding Boxes/Polygons), Annotating Text for NLP (NER/Sentiment), Reviewing Gold Standard Data, Identifying Data Anomalies, Adhering to Labeling Guidelines"
+  },
+  {
+    "OkupasiID": "PON-AI-05",
+    "Area_Fungsi": "Artificial Intelligence",
+    "Okupasi": "MLOps Engineer",
+    "Unit_Kompetensi": "Machine Learning Operations (MLOps), Model Deployment & Serving, ML Pipelines, Model Monitoring, Infrastructure Automation",
+    "Kuk_Keywords": "Building End-to-End ML Pipelines (Kubeflow/MLflow), Deploying Models to Production (Docker/K8s), Monitoring Model Drift & Bias, Managing Model Registry & Versioning, Automating Retraining Triggers"
+  },
+  {
+    "OkupasiID": "PON-AI-06",
+    "Area_Fungsi": "Artificial Intelligence",
+    "Okupasi": "Speech Recognition Engineer",
+    "Unit_Kompetensi": "Speech Processing, Automatic Speech Recognition (ASR), Text-to-Speech (TTS), Acoustic & Language Modeling, Audio Signal Processing",
+    "Kuk_Keywords": "Training ASR Models (Kaldi/Wav2Vec), Implementing Speaker Diarization, Noise Reduction & Audio Cleaning, Optimizing Phoneme Recognition, Building Voice User Interfaces"
+  },
+  {
+    "OkupasiID": "PON-AT-01",
+    "Area_Fungsi": "Automation",
+    "Okupasi": "RPA Developer",
+    "Unit_Kompetensi": "Robotic Process Automation (UiPath/Automation Anywhere), Workflow Logic & Scripting (VB.NET/Python), Business Process Analysis, Bot Orchestration, Error Handling & Debugging",
+    "Kuk_Keywords": "Developing Autonomous Bots, Automating Repetitive Tasks (Screen Scraping/OCR), Managing Orchestrator/Control Room, Designing Process Definition Documents (PDD), Optimizing Bot Performance, Handling Exception Scenarios"
+  },
+  {
+    "OkupasiID": "PON-BC-01",
+    "Area_Fungsi": "Blockchain",
+    "Okupasi": "Blockchain Developer",
+    "Unit_Kompetensi": "Smart Contract Development (Solidity/Rust), Web3 Integration (Web3.js/Ethers.js), DApp Architecture, Blockchain Protocols (Ethereum/BSC), Token Standards",
+    "Kuk_Keywords": "Writing Secure Smart Contracts, Developing Decentralized Applications (DApps), Implementing ERC20/ERC721 Standards, Testing Contracts (Hardhat/Truffle), Integrating Wallets (Metamask)"
+  },
+  {
+    "OkupasiID": "PON-BC-02",
+    "Area_Fungsi": "Blockchain",
+    "Okupasi": "Blockchain Analyst",
+    "Unit_Kompetensi": "On-Chain Data Analysis, Tokenomics & Market Research, DeFi Protocol Analysis, Crypto Market Trends, Fundamental Analysis",
+    "Kuk_Keywords": "Analyzing Transaction Flows (Etherscan/Dune), Evaluating Token Distribution Models, Researching DeFi Yield Strategies, Tracking Whale Wallets, Assessing Project Viability"
+  },
+  {
+    "OkupasiID": "PON-BC-03",
+    "Area_Fungsi": "Blockchain",
+    "Okupasi": "Smart Contract Auditor",
+    "Unit_Kompetensi": "Smart Contract Security, Vulnerability Assessment, Formal Verification, Gas Optimization, Exploit Analysis",
+    "Kuk_Keywords": "Auditing Code for Vulnerabilities (Reentrancy/Overflow), Performing Static & Dynamic Analysis, Optimizing Gas Usage, Writing Audit Reports, Reviewing Logic Flaws"
+  },
+  {
+    "OkupasiID": "PON-BC-04",
+    "Area_Fungsi": "Blockchain",
+    "Okupasi": "Blockchain Researcher",
+    "Unit_Kompetensi": "Cryptography & Consensus Mechanisms, Protocol Research (L1/L2), Zero-Knowledge Proofs (ZK), Distributed Systems Theory, Whitepaper Analysis",
+    "Kuk_Keywords": "Researching Scalability Solutions (Rollups/Sharding), Designing New Consensus Algorithms, Analyzing Cryptographic Primitives, Publishing Technical Whitepapers, Studying Interoperability"
+  },
+  {
+    "OkupasiID": "PON-BC-05",
+    "Area_Fungsi": "Blockchain",
+    "Okupasi": "Blockchain Product Manager",
+    "Unit_Kompetensi": "Web3 Product Strategy, Tokenomics Design, Community Driven Development, Go-to-Market (Web3), Ecosystem Growth",
+    "Kuk_Keywords": "Defining Web3 User Journeys, Designing Token Utility & Incentives, Managing Community Feedback (Discord/Twitter), Collaborating with Protocol Partners, Roadmapping Decentralized Features"
+  },
+  {
+    "OkupasiID": "PON-BI-01",
+    "Area_Fungsi": "Business & IT",
+    "Okupasi": "Business Analyst",
+    "Unit_Kompetensi": "Requirement Elicitation & Analysis, Business Process Modeling (BPMN/UML), Technical Documentation (BRD/FSD), Stakeholder Management, Quality Assurance Support (UAT)",
+    "Kuk_Keywords": "Gathering requirements via Interview/Workshop, Mapping As-Is vs To-Be Business Processes, Creating Data Flow Diagrams, Conducting Gap Analysis, Writing Business Requirement Documents (BRD), Coordinating User Acceptance Testing (UAT), Translating business needs to technical specs"
+  },
+  {
+    "OkupasiID": "PON-BI-02",
+    "Area_Fungsi": "Business & IT",
+    "Okupasi": "System Analyst",
+    "Unit_Kompetensi": "System Analysis & Design, UML Modeling, Functional Specification Documentation (FSD), Database Design Basics, Requirement Translation",
+    "Kuk_Keywords": "Creating Use Case Diagrams/Sequence Diagrams, Designing ERD & Data Flow, Translating Business Reqs to System Specs, Defining System Inputs/Outputs, Troubleshooting Logic Errors"
+  },
+  {
+    "OkupasiID": "PON-BI-03",
+    "Area_Fungsi": "Business & IT",
+    "Okupasi": "IT Business Partner",
+    "Unit_Kompetensi": "Strategic Business Relationship Mgt, IT Strategy Alignment, Demand Management, Business Acumen, Consultative Selling",
+    "Kuk_Keywords": "Acting as Liaison between Business Units and IT, Shaping IT Demand, Identifying Technology Opportunities for Business, Managing Stakeholder Expectations, Roadmapping IT Solutions"
+  },
+  {
+    "OkupasiID": "PON-BI-04",
+    "Area_Fungsi": "Business & IT",
+    "Okupasi": "Quality Assurance (UAT)",
+    "Unit_Kompetensi": "User Acceptance Testing (UAT) Management, Test Scenario Design, Defect Validation, Business Process Testing, User Training Support",
+    "Kuk_Keywords": "Creating UAT Test Scripts, Coordinating with End-Users for Testing, Validating Bug Fixes, Gathering User Sign-offs, Documenting Test Evidence"
+  },
+  {
+    "OkupasiID": "PON-BI-05",
+    "Area_Fungsi": "Business & IT",
+    "Okupasi": "ERP Consultant (SAP/Oracle)",
+    "Unit_Kompetensi": "ERP Module Configuration (FICO/SD/MM/HCM), Business Process Re-engineering, ERP Implementation Lifecycle, User Training, Gap Analysis",
+    "Kuk_Keywords": "Configuring ERP System Parameters, Mapping Business Processes to ERP Logic, Conducting Fit-Gap Analysis, Migrating Legacy Data, Training Key Users"
+  },
+  {
+    "OkupasiID": "PON-BI-06",
+    "Area_Fungsi": "Business & IT",
+    "Okupasi": "IT Procurement",
+    "Unit_Kompetensi": "Strategic Sourcing & Procurement, Vendor Contract Management, IT Asset Lifecycle, Negotiation Skills, RFP/RFQ Management",
+    "Kuk_Keywords": "Drafting Request for Proposals (RFP), Negotiating SLAs and Pricing, Managing Software Licenses & Renewals, Evaluating Vendor Performance, Ensuring Compliance in Purchasing"
+  },
+  {
+    "OkupasiID": "PON-BI-07",
+    "Area_Fungsi": "Business & IT",
+    "Okupasi": "Business Process Analyst",
+    "Unit_Kompetensi": "Business Process Management (BPM), Process Mapping (BPMN), Continuous Improvement (Lean/Six Sigma), As-Is/To-Be Analysis, Workflow Automation",
+    "Kuk_Keywords": "Mapping Current State vs Future State, Identifying Bottlenecks & Inefficiencies, Designing Optimized Workflows, Standardizing Standard Operating Procedures (SOP), Recommending Automation Tools"
+  },
+  {
+    "OkupasiID": "PON-CL-01",
+    "Area_Fungsi": "Cloud Computing",
+    "Okupasi": "Cloud Architect",
+    "Unit_Kompetensi": "Cloud Solution Architecture, Well-Architected Framework, High Availability & DR Strategy, Cloud Migration Planning, Multi-Cloud Strategy",
+    "Kuk_Keywords": "Designing Scalable Cloud Infrastructures, Optimizing for Cost & Performance, Ensuring Reliability & Fault Tolerance, Leading Cloud Migration Projects, Selecting Appropriate Cloud Services"
+  },
+  {
+    "OkupasiID": "PON-CL-02",
+    "Area_Fungsi": "Cloud Computing",
+    "Okupasi": "Cloud Support Engineer",
+    "Unit_Kompetensi": "Cloud Troubleshooting & Support, Incident Management, Access Management (IAM), Log Analysis, Customer Service",
+    "Kuk_Keywords": "Resolving Support Tickets (L1/L2), Troubleshooting Connectivity & Permission Issues, Analyzing CloudWatch/Stackdriver Logs, Managing User Access Requests, Escalating Complex Issues"
+  },
+  {
+    "OkupasiID": "PON-CL-03",
+    "Area_Fungsi": "Cloud Computing",
+    "Okupasi": "FinOps Engineer",
+    "Unit_Kompetensi": "Cloud Financial Management, Cost Optimization Strategy, Budgeting & Forecasting, Resource Tagging & Allocation, Reserved Instance Management",
+    "Kuk_Keywords": "Analyzing Cloud Bills & Usage, Implementing Cost Saving Strategies (Spot/RI), Enforcing Tagging Policies, Creating Cost Dashboards, Forecasting Cloud Spend"
+  },
+  {
+    "OkupasiID": "PON-CL-04",
+    "Area_Fungsi": "Cloud Computing",
+    "Okupasi": "Cloud Database Specialist",
+    "Unit_Kompetensi": "Managed Cloud Databases (RDS/Cloud SQL), NoSQL Cloud Services (DynamoDB/CosmosDB), Database Migration to Cloud, Performance Tuning, Backup Strategy",
+    "Kuk_Keywords": "Provisioning Managed Database Instances, Handling Database Migrations (DMS), Scaling Read Replicas, Configuring Automated Backups, Optimizing Query Performance in Cloud"
+  },
+  {
+    "OkupasiID": "PON-CL-05",
+    "Area_Fungsi": "Cloud Computing",
+    "Okupasi": "Cloud Network Engineer",
+    "Unit_Kompetensi": "Cloud Networking Architecture, Virtual Private Clouds (VPC/VNet), Hybrid Connectivity, Network Security, Traffic Management",
+    "Kuk_Keywords": "Configuring VPC Peering & Transit Gateways, Setting up Direct Connect/ExpressRoute, Managing Load Balancers & CDNs, Implementing Network ACLs & Security Groups, Troubleshooting VPN Tunnels"
+  },
+  {
+    "OkupasiID": "PON-CY-01",
+    "Area_Fungsi": "Cybersecurity",
+    "Okupasi": "SOC Analyst",
+    "Unit_Kompetensi": "Security Information & Event Management (SIEM), Threat Intelligence & Hunting, Incident Response (IR) & Forensics, Network Traffic Analysis, Vulnerability Management",
+    "Kuk_Keywords": "Monitoring Security Alerts (L1/L2 Triage), Analyzing Log Sources (Syslog/Firewall/Windows Event), Detecting Indicators of Compromise (IoC), Mapping Threats to MITRE ATT&CK Framework, Performing Malware Sandboxing, Creating Incident Playbooks, Handling False Positives"
+  },
+  {
+    "OkupasiID": "PON-CY-02",
+    "Area_Fungsi": "Cybersecurity",
+    "Okupasi": "Penetration Tester",
+    "Unit_Kompetensi": "Offensive Security & Ethical Hacking, Web & Mobile Application Security, Network & Infrastructure Penetration, Security Standards (OWASP/OSSTMM), Exploit Development Basics",
+    "Kuk_Keywords": "Conducting Reconnaissance & OSINT, Identifying Vulnerabilities (SQLi/XSS/RCE/IDOR), Executing Exploits & Privilege Escalation, Using Pentest Tools (Burp Suite/Metasploit/Nmap), Writing Technical Reports with CVSS Scoring, Manual Testing vs Automated Scanning, Social Engineering Scenarios"
+  },
+  {
+    "OkupasiID": "PON-CY-03",
+    "Area_Fungsi": "Cybersecurity",
+    "Okupasi": "Cybersecurity Analyst (GRC)",
+    "Unit_Kompetensi": "Governance, Risk & Compliance (GRC), Security Frameworks (ISO 27001/NIST CSF), IT Audit & Assurance, Third-Party Risk Management (TPRM), Security Policy Development",
+    "Kuk_Keywords": "Conducting Risk Assessments (RA), Managing Risk Register, Performing Internal/External Audits, Ensuring Regulatory Compliance (PCI-DSS/GDPR), Developing Security Policies & SOPs, Evaluating Vendor Security Posture"
+  },
+  {
+    "OkupasiID": "PON-CY-04",
+    "Area_Fungsi": "Cybersecurity",
+    "Okupasi": "Digital Forensics Analyst",
+    "Unit_Kompetensi": "Computer & Mobile Forensics, Legal Hold & E-Discovery, Forensic Imaging & Acquisition, Chain of Custody Management, Artifact Analysis (Windows/Linux)",
+    "Kuk_Keywords": "Preserving Digital Evidence, Analyzing RAM/Memory Dumps, Recovering Deleted Data, Using Forensic Tools (EnCase/FTK/Autopsy), Reconstructing Attack Timelines, Writing Expert Witness Reports, Validating Evidence Hash Integrity"
+  },
+  {
+    "OkupasiID": "PON-CY-05",
+    "Area_Fungsi": "Cybersecurity",
+    "Okupasi": "Cybersecurity Architect",
+    "Unit_Kompetensi": "Enterprise Security Architecture (SABSA/TOGAF), Zero Trust Network Access (ZTNA), Secure Cloud Architecture, Threat Modeling, Defense-in-Depth Strategy",
+    "Kuk_Keywords": "Designing Secure Network Enclaves, Reviewing Solution Architectures, Selecting Security Technologies, Implementing Micro-segmentation, Defining Encryption Standards, Aligning Technical Design with Business Goals"
+  },
+  {
+    "OkupasiID": "PON-CY-06",
+    "Area_Fungsi": "Cybersecurity",
+    "Okupasi": "Cloud Security Engineer",
+    "Unit_Kompetensi": "Cloud Security Posture Management (CSPM), Cloud Workload Protection (CWPP), Identity & Access Management (Cloud IAM), Container Security, Infrastructure as Code Security",
+    "Kuk_Keywords": "Hardening Cloud Environments (AWS/Azure/GCP), Configuring WAF & Shielding, Managing Key Management Service (KMS/HSM), Remediating Misconfigurations, Securing Kubernetes Clusters, Automating Compliance Checks"
+  },
+  {
+    "OkupasiID": "PON-CY-07",
+    "Area_Fungsi": "Cybersecurity",
+    "Okupasi": "Incident Responder",
+    "Unit_Kompetensi": "Incident Response Lifecycle (NIST SP 800-61), Threat Hunting & Triage, Malware Analysis (Static/Dynamic), Security Operations (SecOps), Crisis Management",
+    "Kuk_Keywords": "Executing Incident Playbooks, Containing Active Threats, Eradicating Malware/Backdoors, Performing Root Cause Analysis (RCA), Analyzing Network PCAP, Coordinating Post-Incident Reviews, Writing Incident Reports"
+  },
+  {
+    "OkupasiID": "PON-CY-08",
+    "Area_Fungsi": "Cybersecurity",
+    "Okupasi": "Application Security Engineer",
+    "Unit_Kompetensi": "Secure Software Development Life Cycle (SSDLC), DevSecOps Integration, Vulnerability Scanning (SAST/DAST/SCA), Secure Coding Standards, Web App Security (OWASP Top 10)",
+    "Kuk_Keywords": "Performing Code Reviews, Triaging Vulnerability Scan Results, Conducting Threat Modeling (STRIDE), Automating Security in CI/CD Pipelines, Educating Developers on Secure Coding, Testing API Security"
+  },
+  {
+    "OkupasiID": "PON-CY-09",
+    "Area_Fungsi": "Cybersecurity",
+    "Okupasi": "Identity & Access Mgt (IAM) Specialist",
+    "Unit_Kompetensi": "Identity Governance & Administration (IGA), Privileged Access Management (PAM), Authentication Protocols (SAML/OIDC/OAuth), Directory Services (AD/LDAP), Multi-Factor Authentication (MFA)",
+    "Kuk_Keywords": "Managing Identity Lifecycle (Joiner/Mover/Leaver), Configuring Single Sign-On (SSO), Reviewing Access Entitlements, Implementing Role-Based Access Control (RBAC), Securing Privileged Accounts, Troubleshooting Login Issues"
+  },
+  {
+    "OkupasiID": "PON-DM-01",
+    "Area_Fungsi": "Digital Marketing",
+    "Okupasi": "Digital Marketing Specialist",
+    "Unit_Kompetensi": "Search Engine Optimization (SEO On-page/Off-page), Search Engine Marketing (SEM/PPC), Social Media Strategy, Web Analytics & Performance Tracking (GA4), Conversion Rate Optimization (CRO)",
+    "Kuk_Keywords": "Conducting Keyword Research & Competitor Analysis, Managing Google Ads/Meta Ads Campaigns, Optimizing Content for Organic Reach, Analyzing Campaign ROI/ROAS, Performing A/B Testing on Landing Pages, Monitoring Traffic Sources & User Behavior, Email Marketing Automation"
+  },
+  {
+    "OkupasiID": "PON-DM-02",
+    "Area_Fungsi": "Digital Marketing",
+    "Okupasi": "SEO Specialist",
+    "Unit_Kompetensi": "Search Engine Optimization (On-Page/Off-Page), Technical SEO, Keyword Strategy, SEO Tools (Ahrefs/Semrush/GSC), Link Building",
+    "Kuk_Keywords": "Conducting SEO Site Audits, Optimizing Meta Tags & Content Structure, Building High-Quality Backlinks, Improving Core Web Vitals, Analyzing Organic Traffic Growth, Keyword Gap Analysis"
+  },
+  {
+    "OkupasiID": "PON-DM-03",
+    "Area_Fungsi": "Digital Marketing",
+    "Okupasi": "Content Strategist",
+    "Unit_Kompetensi": "Content Marketing Strategy, Editorial Planning, Brand Storytelling, Content Distribution, Audience Persona Mapping",
+    "Kuk_Keywords": "Developing Editorial Calendars, Conducting Content Audits, Defining Brand Voice & Tone Guidelines, Planning Topic Clusters, Measuring Content Performance"
+  },
+  {
+    "OkupasiID": "PON-DM-04",
+    "Area_Fungsi": "Digital Marketing",
+    "Okupasi": "Social Media Specialist",
+    "Unit_Kompetensi": "Social Media Management (SMM), Community Engagement, Social Analytics, Trend Analysis, Paid Social Basics",
+    "Kuk_Keywords": "Creating Engaging Content (Reels/TikTok/Posts), Managing Community Comments/DMs, Scheduling Posts, Collaborating with KOL/Influencers, Analyzing Engagement Metrics"
+  },
+  {
+    "OkupasiID": "PON-DM-05",
+    "Area_Fungsi": "Digital Marketing",
+    "Okupasi": "CRM Specialist",
+    "Unit_Kompetensi": "Customer Relationship Management, Email Marketing Automation, Customer Segmentation, Loyalty Program Management, Retention Strategy",
+    "Kuk_Keywords": "Setting up Drip Campaigns/Automated Flows, Segmenting User Database (RFM Analysis), Managing Email Deliverability, Analyzing Churn Rates, Personalizing Customer Communication"
+  },
+  {
+    "OkupasiID": "PON-DM-06",
+    "Area_Fungsi": "Digital Marketing",
+    "Okupasi": "SEM Specialist",
+    "Unit_Kompetensi": "Search Engine Marketing (PPC), Google Ads & Bing Ads, Bidding Strategies, Landing Page Optimization, Performance Analytics",
+    "Kuk_Keywords": "Structuring Ad Campaigns & Ad Groups, Managing Bidding Budget (CPC/CPA), Conducting Keyword Research (Negative Keywords), Optimizing Quality Score, Calculating ROAS/ROI"
+  },
+  {
+    "OkupasiID": "PON-DM-07",
+    "Area_Fungsi": "Digital Marketing",
+    "Okupasi": "Content Writer",
+    "Unit_Kompetensi": "Copywriting & Creative Writing, SEO Content Writing, Storytelling, Editing & Proofreading, Marketing Communications",
+    "Kuk_Keywords": "Writing Blog Articles & Whitepapers, Crafting Product Descriptions, Creating Persuasive Ad Copy, Interviewing Subject Matter Experts, Ensuring Grammar & Style Consistency"
+  },
+  {
+    "OkupasiID": "PON-DM-08",
+    "Area_Fungsi": "Digital Marketing",
+    "Okupasi": "E-commerce Specialist",
+    "Unit_Kompetensi": "Marketplace Management (Shopee/Tokopedia/Lazada), E-commerce Operations, Store Optimization, Campaign Management, Inventory Sync",
+    "Kuk_Keywords": "Managing Product Listings (SKU/Images), Participating in Marketplace Campaigns (11.11/Payday), Processing Orders & Returns, Analyzing Store Traffic & Conversion, Customer Chat Response"
+  },
+  {
+    "OkupasiID": "PON-DS-01",
+    "Area_Fungsi": "Data Science",
+    "Okupasi": "Data Analyst",
+    "Unit_Kompetensi": "Data Querying & Manipulation (Advanced SQL), Business Intelligence & Visualization (Tableau/PowerBI), Descriptive & Inferential Statistics, Exploratory Data Analysis (EDA), Data Reporting & Storytelling",
+    "Kuk_Keywords": "Writing Complex SQL Queries (Joins/Window Functions/CTEs), Building Interactive Dashboards, Cleaning & Wrangling Raw Data, Conducting A/B Testing & Hypothesis Testing, Translating Data into Business Insights, Automating Reports"
+  },
+  {
+    "OkupasiID": "PON-DS-02",
+    "Area_Fungsi": "Data Science",
+    "Okupasi": "Data Scientist",
+    "Unit_Kompetensi": "Machine Learning Algorithms (Supervised/Unsupervised), Advanced Statistical Modeling, Data Science Libraries (Pandas/NumPy/Scikit-learn), Feature Engineering & Selection, Deep Learning Basics, Model Evaluation & Deployment",
+    "Kuk_Keywords": "Training Predictive Models (Regression/Classification/Clustering), Optimizing Hyperparameters (GridSearch/Optuna), Preprocessing High-Dimensional Data, Validating Models (Cross-Validation/AUC-ROC/RMSE), Implementing Natural Language Processing (NLP), Deploying Models via API (Flask/FastAPI)"
+  },
+  {
+    "OkupasiID": "PON-DS-03",
+    "Area_Fungsi": "Data Science",
+    "Okupasi": "Data Engineer",
+    "Unit_Kompetensi": "ETL/ELT Pipeline Architecture, Big Data Technologies (Spark/Hadoop), Data Warehousing & Data Lakes, Workflow Orchestration (Airflow), Database Administration & Modeling, Cloud Data Services (AWS/GCP/Azure)",
+    "Kuk_Keywords": "Designing Scalable Data Pipelines, Managing Data Warehouses (Snowflake/BigQuery/Redshift), Processing Large Datasets using PySpark, Orchestrating Workflows with Apache Airflow/Dagster, Designing Data Schemas (Star/Snowflake Schema), Ensuring Data Quality & Governance"
+  },
+  {
+    "OkupasiID": "PON-DS-04",
+    "Area_Fungsi": "Data Science",
+    "Okupasi": "BI Developer",
+    "Unit_Kompetensi": "Microsoft BI Stack (SSIS/SSRS/SSAS), Data Warehousing Concepts, Power BI Development, SQL Server Management, ETL/ELT Orchestration",
+    "Kuk_Keywords": "Developing ETL Packages (SSIS), Creating Paginated Reports (SSRS), Writing Complex DAX Formulas, Designing Star/Snowflake Schemas, Optimizing Data Models for Performance, Automating Data Refreshes"
+  },
+  {
+    "OkupasiID": "PON-DS-05",
+    "Area_Fungsi": "Data Science",
+    "Okupasi": "Machine Learning Engineer",
+    "Unit_Kompetensi": "Deep Learning Frameworks (TensorFlow/PyTorch), MLOps & Model Lifecycle, CI/CD for Machine Learning, Model Serving & Deployment, Cloud AI Infrastructure",
+    "Kuk_Keywords": "Building Automated Retraining Pipelines, Containerizing Models (Docker/Kubernetes), Monitoring Data Drift & Model Performance, Exposing Models via REST/gRPC APIs, Optimizing Inference Latency (ONNX/TensorRT)"
+  },
+  {
+    "OkupasiID": "PON-DS-06",
+    "Area_Fungsi": "Data Science",
+    "Okupasi": "Data Governance Specialist",
+    "Unit_Kompetensi": "Data Governance Frameworks, Data Privacy & Compliance (GDPR/PDP Law), Master Data Management (MDM), Metadata Management, Data Quality Assurance",
+    "Kuk_Keywords": "Establishing Data Stewardship Policies, Managing Data Catalogs (Collibra/Alation), Conducting Data Privacy Impact Assessments (DPIA), Defining Data Dictionary & Lineage, Auditing Data Compliance"
+  },
+  {
+    "OkupasiID": "PON-DS-07",
+    "Area_Fungsi": "Data Science",
+    "Okupasi": "Junior Data Analyst",
+    "Unit_Kompetensi": "Spreadsheet Mastery (Advanced Excel/Google Sheets), Basic SQL Querying, Data Visualization Basics (Looker Studio), Data Cleaning Techniques, Reporting Fundamentals",
+    "Kuk_Keywords": "Utilizing Lookup (VLOOKUP/XLOOKUP) & Pivot Tables, Cleaning & Formatting Raw Data, Creating Daily Operational Reports, Validating Data Accuracy, Basic Descriptive Analysis"
+  },
+  {
+    "OkupasiID": "PON-DS-08",
+    "Area_Fungsi": "Data Science",
+    "Okupasi": "Business Intelligence Analyst",
+    "Unit_Kompetensi": "Data Visualization & Storytelling (Tableau/PowerBI), Business Acumen & Strategy, SQL for Data Analysis, KPI Definition & Tracking, Ad-hoc Analysis",
+    "Kuk_Keywords": "Designing Executive Dashboards, Translating Metrics into Actionable Insights, Presenting Findings to Stakeholders, Analyzing Business Trends & Patterns, Writing Calculated Fields & Parameters"
+  },
+  {
+    "OkupasiID": "PON-DS-09",
+    "Area_Fungsi": "Data Science",
+    "Okupasi": "Data Modeler",
+    "Unit_Kompetensi": "Enterprise Data Modeling, Conceptual/Logical/Physical Design, Relational & NoSQL Paradigms, Database Normalization Standards, Metadata Standards",
+    "Kuk_Keywords": "Designing Entity-Relationship Diagrams (ERD), Applying Normalization (3NF) & Denormalization Techniques, Mapping Data Lineage, Defining Database Constraints & Indexes, Choosing Data Storage Technologies"
+  },
+  {
+    "OkupasiID": "PON-DS-10",
+    "Area_Fungsi": "Data Science",
+    "Okupasi": "Analytics Engineer",
+    "Unit_Kompetensi": "Analytics Engineering (dbt Core/Cloud), Modern Data Stack (MDS), Data Modeling (Dimensional/Kimball), Software Engineering for Data (Git/CI/CD), SQL Proficiency",
+    "Kuk_Keywords": "Building Data Transformation Pipelines with dbt, Implementing Data Quality Tests, Managing Code-based Definitions (SQL/Jinja), Version Controlling Data Logic (Git), Curating \"Gold\" Datasets for BI"
+  },
+  {
+    "OkupasiID": "PON-ITM-01",
+    "Area_Fungsi": "IT Management",
+    "Okupasi": "IT Manager",
+    "Unit_Kompetensi": "IT Leadership & Operations, Strategic IT Planning, Budgeting & Cost Management, Team Development, Vendor Management",
+    "Kuk_Keywords": "Leading IT Operations Team, Managing OpEx & CapEx Budgets, Developing IT Policies & Procedures, Negotiating Vendor Contracts, Aligning IT Goals with Business"
+  },
+  {
+    "OkupasiID": "PON-ITM-02",
+    "Area_Fungsi": "IT Management",
+    "Okupasi": "IT Auditor",
+    "Unit_Kompetensi": "IT General Controls (ITGC), Risk-Based Auditing, Compliance Frameworks (COBIT/ISO), Security Audit, Reporting",
+    "Kuk_Keywords": "Executing IT Audit Plans, Assessing Control Effectiveness, Identifying Non-Compliance Risks, Writing Audit Findings Reports, Reviewing Disaster Recovery Plans"
+  },
+  {
+    "OkupasiID": "PON-ITM-03",
+    "Area_Fungsi": "IT Management",
+    "Okupasi": "IT Service Manager (ITSM)",
+    "Unit_Kompetensi": "IT Service Management (ITIL V4), Service Level Management, Incident & Problem Management, Change Management, ITSM Tools (ServiceNow)",
+    "Kuk_Keywords": "Ensuring SLA Compliance, Managing Major Incidents, Running Change Advisory Board (CAB), Improving Service Delivery Quality, Overseeing Helpdesk Operations"
+  },
+  {
+    "OkupasiID": "PON-ITM-04",
+    "Area_Fungsi": "IT Management",
+    "Okupasi": "IT Asset Manager",
+    "Unit_Kompetensi": "IT Asset Management (ITAM), Software Asset Management (SAM), Hardware Lifecycle, License Compliance, Inventory Auditing",
+    "Kuk_Keywords": "Tracking Hardware & Software Inventory, Optimizing License Usage, Ensuring Compliance during Audits, Managing Asset Disposal, Procuring IT Assets"
+  },
+  {
+    "OkupasiID": "PON-ITM-05",
+    "Area_Fungsi": "IT Management",
+    "Okupasi": "IT Governance Specialist",
+    "Unit_Kompetensi": "IT Governance Frameworks (COBIT/NIST), Enterprise Risk Management, Policy & Compliance, Internal Controls, IT Strategy Alignment",
+    "Kuk_Keywords": "Developing IT Governance Policies, Maintaining Risk Registers, Ensuring Regulatory Compliance, Monitoring Control Performance, Aligning IT and Business Governance"
+  },
+  {
+    "OkupasiID": "PON-NI-01",
+    "Area_Fungsi": "Network & Infrastructure",
+    "Okupasi": "IT Support / Helpdesk",
+    "Unit_Kompetensi": "Technical Support & Troubleshooting, Hardware & Peripheral Maintenance, Basic Network Administration (LAN/WLAN), Operating System Management (Windows/Linux/MacOS), IT Service Management (ITSM)",
+    "Kuk_Keywords": "Diagnosing Hardware/Software Failures, Managing User Accounts (Active Directory/Office 365), Installing & Patching OS, Configuring Peripherals (Printers/Scanners), Basic Network Setup (Cabling/IP Configuration), Handling Ticketing Systems (ServiceNow/Jira), Remote Desktop Support"
+  },
+  {
+    "OkupasiID": "PON-NI-02",
+    "Area_Fungsi": "Network & Infrastructure",
+    "Okupasi": "Network Administrator",
+    "Unit_Kompetensi": "Network Architecture & Topology, Routing & Switching Protocols, Network Security & Firewalling, Vendor Specific Configuration (Cisco/Mikrotik/Juniper), Network Monitoring & Performance",
+    "Kuk_Keywords": "Configuring VLANs, Trunking & Spanning Tree (STP), Implementing Dynamic Routing (OSPF/BGP/EIGRP), Managing VPN Tunnels (IPSec/OpenVPN/WireGuard), Setting up NAT, DHCP, & DNS Services, Firewall Rule Management, Network Traffic Analysis (Wireshark), Monitoring Infrastructure (Nagios/Zabbix)"
+  },
+  {
+    "OkupasiID": "PON-NI-03",
+    "Area_Fungsi": "Network & Infrastructure",
+    "Okupasi": "DevOps Engineer",
+    "Unit_Kompetensi": "Cloud Infrastructure Management (AWS/GCP/Azure), Containerization & Orchestration (Docker/Kubernetes), Infrastructure as Code (IaC), CI/CD Pipeline Automation, Observability & Reliability Engineering (SRE)",
+    "Kuk_Keywords": "Provisioning Cloud Resources (EC2/S3/GKE/RDS), Writing IaC Scripts (Terraform/Ansible/CloudFormation), Managing Kubernetes Clusters (Pods/Deployments/Services), Building Automated Pipelines (Jenkins/GitLab CI/GitHub Actions), Scripting (Bash/Python/Go), Monitoring System Health (Prometheus/Grafana/ELK Stack)"
+  },
+  {
+    "OkupasiID": "PON-NI-04",
+    "Area_Fungsi": "Network & Infrastructure",
+    "Okupasi": "System Administrator (Linux)",
+    "Unit_Kompetensi": "Linux Operating Systems (RHEL/Ubuntu/CentOS), Shell Scripting & Automation (Bash/Python), Web Server Management (Nginx/Apache), Server Hardening & Security, System Monitoring",
+    "Kuk_Keywords": "Managing User Permissions & Groups (Sudoers), Configuring Cron Jobs & Systemd Services, Patch Management & Package Updates (Yum/Apt), Troubleshooting Kernel & Process Issues, Implementing SSH Key Authentication, Managing Logical Volume Manager (LVM)"
+  },
+  {
+    "OkupasiID": "PON-NI-05",
+    "Area_Fungsi": "Network & Infrastructure",
+    "Okupasi": "System Administrator (Windows)",
+    "Unit_Kompetensi": "Windows Server Ecosystem (2019/2022), Active Directory Domain Services (AD DS), PowerShell Scripting, Hybrid Identity (Azure AD/Entra ID), Endpoint Management (SCCM/Intune)",
+    "Kuk_Keywords": "Managing Group Policy Objects (GPO), Administering DNS/DHCP Services, Provisioning User Accounts & Access Rights, Deploying Hyper-V Virtualization, Managing Windows Server Updates (WSUS), Troubleshooting IIS Web Server"
+  },
+  {
+    "OkupasiID": "PON-NI-06",
+    "Area_Fungsi": "Network & Infrastructure",
+    "Okupasi": "Cloud Engineer",
+    "Unit_Kompetensi": "Cloud Service Providers (AWS/Azure/GCP), Infrastructure as Code (Terraform/CloudFormation), Cloud Networking (VPC/VNet), Identity & Access Management (IAM), Serverless Computing",
+    "Kuk_Keywords": "Provisioning Virtual Machines (EC2/VM), Configuring Load Balancers & Auto Scaling, Managing Cloud Storage (S3/Blob), Implementing Security Groups & WAF, Optimizing Cloud Costs (FinOps), Designing High Availability Zones"
+  },
+  {
+    "OkupasiID": "PON-NI-07",
+    "Area_Fungsi": "Network & Infrastructure",
+    "Okupasi": "Database Administrator (DBA)",
+    "Unit_Kompetensi": "Relational Database Management (PostgreSQL/MySQL/Oracle/SQL Server), Database Performance Tuning, Disaster Recovery & Backup Strategy, High Availability Clustering, Data Integrity (ACID)",
+    "Kuk_Keywords": "Writing Complex Stored Procedures & Triggers, Optimizing Slow Queries & Indexing, Configuring Database Replication (Master-Slave), Managing User Roles & Privileges, Performing Point-in-Time Recovery (PITR), Monitoring Database Health"
+  },
+  {
+    "OkupasiID": "PON-NI-08",
+    "Area_Fungsi": "Network & Infrastructure",
+    "Okupasi": "IT Infrastructure Manager",
+    "Unit_Kompetensi": "IT Strategy & Roadmap, IT Service Management (ITSM/ITIL), Vendor & License Management, Budgeting & Cost Control (CapEx/OpEx), Business Continuity Planning (BCP)",
+    "Kuk_Keywords": "Defining Service Level Agreements (SLA), Leading Infrastructure Projects, Managing IT Assets & Procurement, Ensuring Compliance & Auditing, Coordinate with Cross-functional Teams, Capacity Planning"
+  },
+  {
+    "OkupasiID": "PON-NI-09",
+    "Area_Fungsi": "Network & Infrastructure",
+    "Okupasi": "Network Security Engineer",
+    "Unit_Kompetensi": "Network Perimeter Security (Firewall/NGFW), Intrusion Detection/Prevention (IDS/IPS), VPN & Remote Access Security, Network Access Control (NAC), Security Information & Event Management (SIEM)",
+    "Kuk_Keywords": "Configuring Firewall Rules & Policies, Hardening Network Devices, Analyzing Network Traffic (Wireshark), Mitigating DDoS Attacks, Managing IPsec/SSL VPN Tunnels, Responding to Security Incidents, Conducting Vulnerability Scanning"
+  },
+  {
+    "OkupasiID": "PON-NI-10",
+    "Area_Fungsi": "Network & Infrastructure",
+    "Okupasi": "Database Administrator (NoSQL)",
+    "Unit_Kompetensi": "NoSQL Database Management (MongoDB/Cassandra/Redis), Distributed Data Systems, Document & Key-Value Stores, Database Sharding & Partitioning, Eventual Consistency Models",
+    "Kuk_Keywords": "Designing Schemaless Data Structures, Managing Replica Sets for Redundancy, Optimizing In-Memory Caching (Redis), Handling Large Scale Data Ingestion, Troubleshooting Cluster Synchronization, Backup & Restore of Sharded Clusters"
+  },
+  {
+    "OkupasiID": "PON-NI-11",
+    "Area_Fungsi": "Network & Infrastructure",
+    "Okupasi": "VoIP Engineer",
+    "Unit_Kompetensi": "Voice over IP Protocols (SIP/RTP/H.323), PBX Systems (Asterisk/FreePBX/Cisco UCM), Telephony Infrastructure, Quality of Service (QoS), Unified Communications",
+    "Kuk_Keywords": "Configuring SIP Trunks & Call Routing, Troubleshooting Call Quality (Jitter/Latency/Packet Loss), Managing IVR (Interactive Voice Response) Flows, Setting up Softphones & Hardphones, Analyzing SIP Signaling Logs (Wireshark), Managing Session Border Controllers (SBC)"
+  },
+  {
+    "OkupasiID": "PON-NI-12",
+    "Area_Fungsi": "Network & Infrastructure",
+    "Okupasi": "Data Center Engineer",
+    "Unit_Kompetensi": "Physical Infrastructure Management, Server Hardware & Racking, Structured Cabling (Fiber/Copper), Power & Cooling Management (HVAC/UPS), Data Center Operations",
+    "Kuk_Keywords": "Installing & Mounting Servers in Racks, Managing Cable Management Systems, Monitoring Environmental Sensors, Performing Hardware Replacements (RAM/HDD/PSU), Inventory Asset Tagging, Ensuring Physical Security Compliance"
+  },
+  {
+    "OkupasiID": "PON-PM-01",
+    "Area_Fungsi": "Product Management",
+    "Okupasi": "Product Manager",
+    "Unit_Kompetensi": "Product Lifecycle Management (Discovery to Delivery), Product Strategy & Roadmap, Agile & Scrum Methodologies, Requirement Documentation (PRD/User Stories), Data-Driven Decision Making",
+    "Kuk_Keywords": "Defining Product Vision & KPIs (OKRs), Prioritizing Backlog (RICE/MoSCoW Framework), Conducting Market & User Research, Facilitating Scrum Ceremonies (Sprint Planning/Retro), Writing detailed User Stories with Acceptance Criteria, Analyzing Product Metrics (Churn/Retention/DAU)"
+  },
+  {
+    "OkupasiID": "PON-PM-02",
+    "Area_Fungsi": "Product Management",
+    "Okupasi": "Product Owner",
+    "Unit_Kompetensi": "Agile Product Ownership, Backlog Management & Prioritization, User Story Definition, Stakeholder Management, Acceptance Criteria Writing",
+    "Kuk_Keywords": "Refining Product Backlog, Prioritizing features using RICE/MoSCoW, Writing User Stories with Gherkin syntax, Accepting/Rejecting Sprint deliverables, Bridging Business & Dev Team"
+  },
+  {
+    "OkupasiID": "PON-PM-03",
+    "Area_Fungsi": "Product Management",
+    "Okupasi": "Project Manager (IT)",
+    "Unit_Kompetensi": "Project Management Professional (PMP/PRINCE2), Resource & Schedule Management, Risk Management, Budgeting & Cost Control, Project Reporting",
+    "Kuk_Keywords": "Creating Gantt Charts/WBS, Allocating Resources, Monitoring Critical Path, Mitigating Project Risks, Managing Scope Creep, Status Reporting (Green/Amber/Red)"
+  },
+  {
+    "OkupasiID": "PON-PM-04",
+    "Area_Fungsi": "Product Management",
+    "Okupasi": "Associate Product Manager",
+    "Unit_Kompetensi": "Product Discovery, Market Research & Competitive Analysis, Data Analysis for Product, Feature Ideation, Documentation Support",
+    "Kuk_Keywords": "Analyzing User Feedback (NPS/CSAT), Conducting A/B Testing, Drafting PRD sections, Supporting PM in Roadmap planning, Monitoring Daily Active Users (DAU)"
+  },
+  {
+    "OkupasiID": "PON-PM-05",
+    "Area_Fungsi": "Product Management",
+    "Okupasi": "Technical Product Manager",
+    "Unit_Kompetensi": "Technical Requirement Definition, API Strategy & Design, System Architecture Understanding, Developer Experience (DX), Integration Planning",
+    "Kuk_Keywords": "Writing Technical Specs (Swagger/OpenAPI), Liaising with Engineering Leads, Evaluating 3rd Party APIs, Translating Business Logic to Code Logic, Managing Technical Debt"
+  },
+  {
+    "OkupasiID": "PON-PM-06",
+    "Area_Fungsi": "Product Management",
+    "Okupasi": "Scrum Master",
+    "Unit_Kompetensi": "Agile Coaching & Facilitation, Scrum Framework Mastery, Servant Leadership, Conflict Resolution, Process Improvement",
+    "Kuk_Keywords": "Facilitating Sprint Ceremonies (Planning/Daily/Review/Retro), Removing Impediments/Blockers, Protecting Team from External Distractions, Coaching Team on Self-Organization, Tracking Velocity/Burn-down Charts"
+  },
+  {
+    "OkupasiID": "PON-PM-07",
+    "Area_Fungsi": "Product Management",
+    "Okupasi": "Program Manager",
+    "Unit_Kompetensi": "Program Strategy & Alignment, Multi-Project Orchestration, Cross-Functional Dependency Management, Strategic Stakeholder Comm, Change Management",
+    "Kuk_Keywords": "Overseeing Interconnected Projects, Managing Program Budget, Resolving Cross-Project Conflicts, Aligning Deliverables with Corporate Strategy, Standardizing Governance Processes"
+  },
+  {
+    "OkupasiID": "PON-SD-01",
+    "Area_Fungsi": "Software Development",
+    "Okupasi": "Junior Web Developer (Frontend)",
+    "Unit_Kompetensi": "Web Markup & Styling (HTML5/CSS3), JavaScript (ES6+) Programming, Frontend Framework Architecture (React.js/Vue.js), RESTful API Consumption, Version Control (Git), Web Performance & Debugging",
+    "Kuk_Keywords": "Translating UI/UX designs to code (Slicing), Implementing Responsive Web Design (RWD) using Flexbox/Grid, Managing Global & Local State (Redux/Context), Asynchronous Data Fetching (Axios/Fetch/Async-Await), Git Workflow (Branching, Merging, Pull Requests), DOM Manipulation, Component Lifecycle Management, Form Validation & Handling, Cross-Browser Compatibility Testing, Error Handling & Troubleshooting"
+  },
+  {
+    "OkupasiID": "PON-SD-02",
+    "Area_Fungsi": "Software Development",
+    "Okupasi": "Junior Backend Developer",
+    "Unit_Kompetensi": "Server-Side Programming (Node.js/PHP/Python/Go), Database Architecture & Management (SQL/NoSQL), RESTful API Architecture, Backend Security & Authentication, Server Deployment & Containerization Basics",
+    "Kuk_Keywords": "Implementing Efficient CRUD Logic, Designing Normalized Database Schemas (ERD), Optimizing Query Performance (Indexing/Joins), Implementing Secure Authentication (JWT/OAuth2/Session), Documenting API Endpoints (Swagger/OpenAPI/Postman), Developing Middleware & Request Pipelines, Structured Error Logging & Exception Handling"
+  },
+  {
+    "OkupasiID": "PON-SD-03",
+    "Area_Fungsi": "Software Development",
+    "Okupasi": "Senior Backend Developer",
+    "Unit_Kompetensi": "Distributed System Architecture (Microservices/SOA), Advanced System Design & Scalability, Cloud-Native Infrastructure & DevOps Integration, High-Performance Communication Protocols, Advanced Data Consistency & Caching Strategies",
+    "Kuk_Keywords": "Architecting Fault-Tolerant & High-Availability Systems, Designing Event-Driven Architecture (Message Queues/Kafka/RabbitMQ), Implementing High-Performance RPC (gRPC/Protobuf), Orchestrating CI/CD Pipelines (Jenkins/GitHub Actions/Docker/K8s), Database Optimization Strategies (Sharding/Replication/Indexing), Implementing Distributed Caching (Redis/Memcached), Advanced Security Standards (OAuth2/OIDC/OWASP)"
+  },
+  {
+    "OkupasiID": "PON-SD-04",
+    "Area_Fungsi": "Software Development",
+    "Okupasi": "QA Engineer (Automation)",
+    "Unit_Kompetensi": "Test Automation Frameworks (Selenium/Cypress/Playwright), Scripting for Testing (Python/Java/JavaScript), API & Performance Testing, CI/CD Test Integration, Quality Assurance Methodologies (SDLC/STLC)",
+    "Kuk_Keywords": "Developing & maintaining automated test scripts, Executing Regression, Smoke, & Sanity testing, Implementing BDD (Behavior Driven Development) with Gherkin/Cucumber, Automating API Testing (Postman/RestAssured), ** conducting Load/Stress Testing (JMeter/K6)**, Bug Tracking & Reporting (Jira/Trello), Integrating tests into CI pipelines (Jenkins/GitLab CI)"
+  },
+  {
+    "OkupasiID": "PON-SD-05",
+    "Area_Fungsi": "Software Development",
+    "Okupasi": "Mobile Developer (Android)",
+    "Unit_Kompetensi": "Native Android Development (Kotlin/Java), Cross-Platform Frameworks (Flutter/React Native), Mobile Architecture Patterns (MVVM/MVI), Android SDK & Jetpack Libraries, Mobile API Integration",
+    "Kuk_Keywords": "Managing Activity & Fragment Lifecycle, Designing Material Design UI/UX, Implementing Dependency Injection (Dagger/Hilt/Koin), State Management (BLoC/Redux/Provider), Local Data Persistence (Room/SQLite), Build Automation (Gradle), Publishing to Google Play Store"
+  },
+  {
+    "OkupasiID": "PON-SD-06",
+    "Area_Fungsi": "Software Development",
+    "Okupasi": "Mobile Developer (iOS)",
+    "Unit_Kompetensi": "Native iOS Development (Swift/Objective-C), Apple Ecosystem & Tools (Xcode/Cocoa Touch), Declarative & Imperative UI (SwiftUI/UIKit), iOS Networking & Concurrency, Apple Design Principles",
+    "Kuk_Keywords": "Managing Memory with ARC, Handling Asynchronous Tasks (GCD/Combine/Async-Await), Implementing Core Data & Realm, Building Adaptive Layouts (Auto Layout), Unit & UI Testing (XCTest), Provisioning Profiles & Certificates, Deploying to TestFlight/App Store"
+  },
+  {
+    "OkupasiID": "PON-SD-07",
+    "Area_Fungsi": "Software Development",
+    "Okupasi": "Game Developer",
+    "Unit_Kompetensi": "Game Engine Proficiency (Unity/Unreal), Game Scripting & Logic (C#/C++), Computer Graphics & Physics, Game Performance Optimization, Asset Pipeline Management",
+    "Kuk_Keywords": "Programming Gameplay Mechanics, Implementing AI & Pathfinding (NavMesh), Optimizing Draw Calls & Memory Management (Object Pooling), Integrating 2D/3D Assets & Animations, Shader Development (HLSL/Shader Graph), Physics Simulation (Rigidbody/Colliders), Cross-Platform Game Building"
+  },
+  {
+    "OkupasiID": "PON-SD-08",
+    "Area_Fungsi": "Software Development",
+    "Okupasi": "Fullstack Developer (JS)",
+    "Unit_Kompetensi": "Fullstack JavaScript Architecture (MERN/MEAN), Server-Side Runtime (Node.js/Express), Frontend SPA (React.js/Next.js), NoSQL Database Design (MongoDB), REST & GraphQL API Development",
+    "Kuk_Keywords": "Building End-to-End Web Applications, Managing Application State (Redux/Context API), Implementing Authentication (JWT/Passport.js), Connecting Frontend to Backend APIs, Deploying to Cloud (Heroku/Vercel/AWS), Writing Asynchronous Code (Promises/Async-Await)"
+  },
+  {
+    "OkupasiID": "PON-SD-09",
+    "Area_Fungsi": "Software Development",
+    "Okupasi": "Fullstack Developer (PHP)",
+    "Unit_Kompetensi": "Modern PHP Frameworks (Laravel/Symfony), Relational Database Management (MySQL/PostgreSQL), Frontend Integration (Vue.js/React/Blade), MVC Architecture Pattern, API Development & Integration",
+    "Kuk_Keywords": "Setting up Monolithic or Decoupled Architectures, Using ORM for Database Interactions (Eloquent/Doctrine), Building Dynamic UIs with Template Engines (Blade/Twig), Managing Dependencies (Composer/NPM), Creating RESTful API Endpoints, Debugging & Performance Tuning"
+  },
+  {
+    "OkupasiID": "PON-SD-10",
+    "Area_Fungsi": "Software Development",
+    "Okupasi": "Software Architect",
+    "Unit_Kompetensi": "System Design & Architecture Patterns, High-Availability & Scalability Planning, Technology Stack Selection, Microservices & Distributed Systems, Cloud-Native Architecture",
+    "Kuk_Keywords": "Creating Technical Specifications (High-Level Design/Low-Level Design), Defining Non-Functional Requirements (Security/Performance/Reliability), Evaluating Trade-offs (CAP Theorem), Mentoring Engineering Teams, Modernizing Legacy Systems, Reviewing Code & Architecture Compliance"
+  },
+  {
+    "OkupasiID": "PON-SD-11",
+    "Area_Fungsi": "Software Development",
+    "Okupasi": "QA Engineer (Manual)",
+    "Unit_Kompetensi": "Manual Testing Methodologies, Test Planning & Documentation, Functional & Non-Functional Testing, Defect Lifecycle Management, User Experience (UX) Testing",
+    "Kuk_Keywords": "Designing Comprehensive Test Cases & Scenarios, Executing Black Box & Exploratory Testing, Reporting Bugs with Reproduction Steps (Jira/Trello), Verifying Fixes & Performing Regression Testing, Validating UI/UX against Design Specs, Conducting User Acceptance Testing (UAT) Support"
+  },
+  {
+    "OkupasiID": "PON-SD-12",
+    "Area_Fungsi": "Software Development",
+    "Okupasi": "Mobile Developer (Cross-platform)",
+    "Unit_Kompetensi": "Cross-Platform Development (Flutter SDK), Dart Programming Language, Widget-Based UI Design, State Management (BLoC/Riverpod/GetX), Native Platform Integration",
+    "Kuk_Keywords": "Building Adaptive UIs (Material/Cupertino), Implementing Custom Method Channels (Android/iOS), Optimizing App Performance & Rendering, Managing App Lifecycle, Integrating 3rd Party Libraries (Pub.dev), Building & Deploying to App Stores"
+  },
+  {
+    "OkupasiID": "PON-SD-13",
+    "Area_Fungsi": "Software Development",
+    "Okupasi": "Mobile Developer (React Native)",
+    "Unit_Kompetensi": "React Native Framework, JavaScript/TypeScript (ES6+), Mobile Bridge Architecture, Native Module Integration, Global State Management",
+    "Kuk_Keywords": "Developing Cross-Platform Components, Using Hooks & Functional Components, Bridging Native Code (Java/Swift) with JS, Debugging with React Native Debugger/Flipper, Handling Navigation (React Navigation), Consuming REST/Graph APIs"
+  },
+  {
+    "OkupasiID": "PON-SD-14",
+    "Area_Fungsi": "Software Development",
+    "Okupasi": "Technical Writer (Software)",
+    "Unit_Kompetensi": "Technical Documentation Standards, API Documentation (OpenAPI/Swagger), Software Development Life Cycle (SDLC), Docs-as-Code Tools, Information Architecture",
+    "Kuk_Keywords": "Writing Developer Guides & SDK References, Creating Release Notes & Changelogs, Documenting API Endpoints (Request/Response examples), Using Markdown & Static Site Generators (Docusaurus/GitBook), Collaborating with Developers for Accuracy, Creating Tutorials & How-to Guides"
+  },
+  {
+    "OkupasiID": "PON-SD-15",
+    "Area_Fungsi": "Software Development",
+    "Okupasi": "Embedded Software Engineer",
+    "Unit_Kompetensi": "Low-Level Programming (C/C++), Microcontroller Architecture (ARM/AVR/ESP), Real-Time Operating Systems (RTOS), IoT Protocols & Connectivity, Hardware Interface Debugging",
+    "Kuk_Keywords": "Developing Firmware & Device Drivers, Handling Communication Protocols (I2C/SPI/UART/MQTT), Optimizing Memory & Power Consumption, Debugging Hardware-Software Integration, Reading Schematics & Datasheets, Implementing IoT Sensor Data Acquisition"
+  },
+  {
+    "OkupasiID": "PON-SD-16",
+    "Area_Fungsi": "Software Development",
+    "Okupasi": "Fullstack Developer (.NET)",
+    "Unit_Kompetensi": ".NET Ecosystem (C#/.NET Core/ASP.NET), Relational DB Management (SQL Server/T-SQL), Frontend Integration (Angular/React), ORM (Entity Framework Core), Cloud Services (Azure)",
+    "Kuk_Keywords": "Developing Scalable Web APIs, Implementing Dependency Injection, Querying with LINQ, Managing Database Migrations, Integrating Azure App Services/Functions, Building SPA (Single Page Applications)"
+  },
+  {
+    "OkupasiID": "PON-SE-01",
+    "Area_Fungsi": "Sales & Marketing",
+    "Okupasi": "Pre-Sales / Solution Engineer",
+    "Unit_Kompetensi": "Technical Solution Selling, Product Demonstration (Demo), Proof of Concept (PoC) Management, RFP/RFI Response Writing, Client Requirement Analysis",
+    "Kuk_Keywords": "Translating Technical Features into Business Value, Conducting Live Product Demos, Architecting Proposed Solutions for Clients, Answering Technical Questions in Sales Calls, Bridging Sales and Engineering Teams"
+  },
+  {
+    "OkupasiID": "PON-UX-01",
+    "Area_Fungsi": "UI/UX",
+    "Okupasi": "UI Designer",
+    "Unit_Kompetensi": "Visual Interface Design, Design System Architecture (Atomic Design), Interactive Prototyping & Micro-interactions, Wireframing & Mockups, Accessibility Standards (WCAG)",
+    "Kuk_Keywords": "Translating wireframes to High-Fidelity designs, Building reusable component libraries (Variants/Auto Layout), Designing responsive layouts (Grid/Constraints), Defining typography & color palettes, Creating seamless transitions, Preparing design handoff for developers, Ensuring visual consistency"
+  },
+  {
+    "OkupasiID": "PON-UX-02",
+    "Area_Fungsi": "UI/UX",
+    "Okupasi": "UX Researcher",
+    "Unit_Kompetensi": "Qualitative & Quantitative Research Methods, Usability Testing & Validation, User Modeling & Empathy Mapping, Information Architecture (IA), Data Synthesis & Reporting",
+    "Kuk_Keywords": "Conducting In-depth User Interviews, Synthesizing findings via Affinity Mapping, Mapping End-to-End User Journeys, Creating User Personas, Executing Heuristic Evaluations, Analyzing Pain Points & Needs, Facilitating Card Sorting/Tree Testing, Validating Hypotheses"
+  },
+  {
+    "OkupasiID": "PON-UX-03",
+    "Area_Fungsi": "UI/UX",
+    "Okupasi": "UX Writer / Content Designer",
+    "Unit_Kompetensi": "UX Writing & Microcopy, Content Strategy & Governance, Information Architecture, Voice & Tone Guidelines, Localization & Accessibility (Writing)",
+    "Kuk_Keywords": "Crafting clear Error Messages & Alerts, Writing concise Onboarding flows, Defining Brand Voice & Tone, Collaborating on Design Systems (Content), Conducting A/B Testing for Copy, Localizing content for global markets (i18n)"
+  },
+  {
+    "OkupasiID": "PON-UX-04",
+    "Area_Fungsi": "UI/UX",
+    "Okupasi": "UI/UX Lead",
+    "Unit_Kompetensi": "Design Leadership & Mentoring, Design Operations (DesignOps), Strategic Product Design, Stakeholder Management, Cross-Functional Collaboration",
+    "Kuk_Keywords": "Conducting Design Critiques & Reviews, Managing Design Roadmaps & Timelines, Aligning Design Goals with Business KPIs, Mentoring Junior/Mid-level Designers, Facilitating Workshops, Hiring & Resource Allocation"
+  },
+  {
+    "OkupasiID": "PON-UX-05",
+    "Area_Fungsi": "UI/UX",
+    "Okupasi": "UX Strategist",
+    "Unit_Kompetensi": "Product Strategy & Vision, Service Design Blueprinting, Customer Experience (CX) Strategy, Market & Competitor Analysis, Business Intelligence for Design",
+    "Kuk_Keywords": "Defining Product Value Proposition, Mapping Holistic Customer Journeys, Identifying Market Gaps & Opportunities, Facilitating Discovery Workshops, Validating Product-Market Fit, Analyzing ROI of Design"
+  },
+  {
+    "OkupasiID": "PON-UX-06",
+    "Area_Fungsi": "UI/UX",
+    "Okupasi": "Interaction Designer",
+    "Unit_Kompetensi": "Motion Design & Choreography, Advanced Prototyping (ProtoPie/Principle), Gesture-based Interaction, Information Architecture, Usability Engineering",
+    "Kuk_Keywords": "Creating High-Fidelity Interactive Mockups, Designing Micro-interactions & Transitions, Defining Animation Curves & Timing, Mapping User Flows & Logic, Collaborating with Front-end on Animation Implementation (Lottie/Rive)"
+  },
+  {
+    "OkupasiID": "PON-UX-07",
+    "Area_Fungsi": "UI/UX",
+    "Okupasi": "Design System Manager",
+    "Unit_Kompetensi": "Design System Architecture, Design Token Management, Component Library Governance, Frontend-Design Sync (Storybook), Documentation & Versioning",
+    "Kuk_Keywords": "Maintaining Single Source of Truth, Defining Global Styles (Typography/Color/Spacing), Managing Component Lifecycle (Create/Deprecate), Writing Usage Documentation, Syncing Figma Tokens to Code, Auditing Design Consistency"
+  },
+  {
+    "OkupasiID": "PON-UX-08",
+    "Area_Fungsi": "UI/UX",
+    "Okupasi": "Junior UI/UX Designer",
+    "Unit_Kompetensi": "Basic Visual Design Tools (Figma/Adobe XD), Wireframing & Prototyping Basics, Design Asset Management, User Research Support, Collaboration Basics",
+    "Kuk_Keywords": "Assisting Senior Designers in Production, Creating Low-Fidelity Wireframes, Organizing Layers & Assets, Slicing Assets for Developers, Conducting Basic Competitor Research, Learning Design Systems"
+  }
+]
