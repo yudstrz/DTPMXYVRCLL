@@ -12,7 +12,7 @@ export default function Home() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    name: "",
     cvText: ""
   });
 
@@ -141,17 +141,7 @@ export default function Home() {
                     placeholder="John Doe"
                   />
                 </div>
-                <div>
-                  <label className="block text-sm text-gray-400 mb-1">Email</label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-[#0f1117] border border-gray-700 rounded-xl px-4 py-3 focus:border-orange-500 focus:outline-none transition-colors"
-                    placeholder="john@example.com"
-                  />
-                </div>
+
                 <div>
                   <label className="block text-sm text-gray-400 mb-1">Ringkasan Profil / CV Text</label>
                   <textarea

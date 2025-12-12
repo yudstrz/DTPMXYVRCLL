@@ -16,6 +16,7 @@ export default function ResultsPage() {
     const router = useRouter();
     const [loading, setLoading] = useState(true);
     const [occupations, setOccupations] = useState<Occupation[]>([]);
+    const [error, setError] = useState<string | null>(null);
     const [selectedId, setSelectedId] = useState<string | null>(null);
 
     useEffect(() => {
@@ -34,11 +35,14 @@ export default function ResultsPage() {
                     body: JSON.stringify({ text: profile.cvText, top_k: 3 }),
                 });
                 const json = await res.json();
-                if (json.recommendations) {
+                if (json.error) {
+                    setError(json.error);
+                } else if (json.recommendations) {
                     setOccupations(json.recommendations);
                 }
             } catch (err) {
                 console.error("Error matching", err);
+                setError("Terjadi kesalahan koneksi. Silakan coba lagi.");
             } finally {
                 setLoading(false);
             }
@@ -73,6 +77,19 @@ export default function ResultsPage() {
                     <div className="flex flex-col items-center justify-center py-20 space-y-4">
                         <Loader2 className="w-12 h-12 text-orange-500 animate-spin" />
                         <p className="text-gray-400 animate-pulse">Memproses kecocokan profil...</p>
+                    </div>
+                ) : error ? (
+                    <div className="text-center py-20">
+                        <div className="bg-red-500/10 border border-red-500/50 rounded-2xl p-6 max-w-2xl mx-auto">
+                            <h3 className="text-xl font-bold text-red-500 mb-2">Terjadi Kesalahan</h3>
+                            <p className="text-gray-300">{error}</p>
+                            <button
+                                onClick={() => window.location.reload()}
+                                className="mt-4 px-6 py-2 bg-red-600 hover:bg-red-700 rounded-lg text-white font-medium transition-colors"
+                            >
+                                Coba Lagi
+                            </button>
+                        </div>
                     </div>
                 ) : (
                     <div className="grid md:grid-cols-3 gap-6">
@@ -111,8 +128,8 @@ export default function ResultsPage() {
 
                                 <div className="mt-8">
                                     <button className={`w-full py-3 rounded-xl font-semibold flex items-center justify-center transition-all ${selectedId === occ.id
-                                            ? 'bg-orange-600 text-white'
-                                            : 'bg-gray-800 text-gray-300 group-hover:bg-gray-700'
+                                        ? 'bg-orange-600 text-white'
+                                        : 'bg-gray-800 text-gray-300 group-hover:bg-gray-700'
                                         }`}>
                                         {selectedId === occ.id ? (
                                             <>Terpilih <Check className="w-4 h-4 ml-2" /></>

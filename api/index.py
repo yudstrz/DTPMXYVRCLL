@@ -21,7 +21,11 @@ except UnicodeDecodeError:
 
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 
-DATA_DIR = os.path.join(os.getcwd(), 'data')
+# Robust path handling
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(BASE_DIR)
+DATA_DIR = os.path.join(PROJECT_ROOT, 'data')
+
 PON_JSON_FILE = os.path.join(DATA_DIR, 'pon_data.json')
 VECTORS_JSON_FILE = os.path.join(DATA_DIR, 'pon_vectors.json')
 
